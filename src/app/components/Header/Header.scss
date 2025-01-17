@@ -1,0 +1,12 @@
+.header {
+  margin: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &__first-block {
+    display: flex;
+    align-items: center;
+  }
+}
