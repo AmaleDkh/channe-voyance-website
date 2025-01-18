@@ -18,9 +18,9 @@ function ImageAndTextBlock() {
       </div>
 
       <div className="image-and-text-block__text">
-        <h2 className="image-and-text-block__text__title">
+        <h3 className="image-and-text-block__text__title">
           Lorem ipsum dolor sit amet consectetur adipiscing elit
-        </h2>
+        </h3>
         <p className="image-and-text-block__text__paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
