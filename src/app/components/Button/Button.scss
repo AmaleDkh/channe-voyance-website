@@ -1,10 +1,12 @@
+@import "../../assets/Colors.scss";
+
 .button {
-  background-color: black;
+  background-color: $medium-gold-color;
   color: white;
   border: none;
   border-radius: 16px;
   padding: 16px 24px;
-  font-weight: bold;
+  font-weight: 400;
   display: flex;
   width: fit-content;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
