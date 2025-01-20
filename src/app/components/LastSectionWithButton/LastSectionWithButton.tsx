@@ -4,16 +4,20 @@ import Button from "../Button/Button";
 // Style
 import "./LastSectionWithButton.scss";
 
-function LastSectionWithButton() {
+type LastSectionWithButtonProps = {
+  title: string;
+  paragraph: string;
+};
+
+function LastSectionWithButton({
+  title,
+  paragraph,
+}: LastSectionWithButtonProps) {
   return (
     <section className="last-section-with-button">
       <div className="last-section-with-button__text">
-        <h2 className="last-section-with-button__text__title">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit
-        </h2>
-        <p className="last-section-with-button__text__subtitle">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit
-        </p>
+        <h2 className="last-section-with-button__text__title">{title}</h2>
+        <p className="last-section-with-button__text__subtitle">{paragraph}</p>
       </div>
       <Button text="PRENDRE RENDEZ-VOUS" />
     </section>

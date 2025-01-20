@@ -5,11 +5,12 @@ import Image from "next/image";
 import "./ImageAndTextSection.scss";
 
 interface presentationProps {
+  image: string;
   title: string;
   paragraph: string;
 }
 
-function ImageAndTextSection({ title, paragraph }: presentationProps) {
+function ImageAndTextSection({ image, title, paragraph }: presentationProps) {
   return (
     <section className="image-and-text-section">
       <div className="image-and-text-section__text">
@@ -22,7 +23,7 @@ function ImageAndTextSection({ title, paragraph }: presentationProps) {
 
       <div className="image-and-text-section__image-container">
         <Image
-          src=""
+          src={image}
           alt=""
           className="image-and-text-section__image-container__image"
           width={384}
