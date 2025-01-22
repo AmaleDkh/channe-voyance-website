@@ -1,0 +1,12 @@
+@import "../../assets/Colors.scss";
+
+.page-introduction {
+  width: 100%;
+  text-align: center;
+  margin-top: 136px;
+
+  &__title {
+    margin: 0 0 24px 0;
+    color: $dark-gold-color;
+  }
+}

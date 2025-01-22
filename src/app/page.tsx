@@ -1,8 +1,5 @@
 "use client";
 
-// React elements
-import { useEffect, useState } from "react";
-
 // Components
 import Layout from "./components/Layout/Layout";
 import LargeImageContainer from "./components/LargeImageContainer/LargeImageContainer";
@@ -15,148 +12,26 @@ import LastSectionWithButton from "./components/LastSectionWithButton/LastSectio
 // Style
 import "./assets/Global.scss";
 
-// API Calls
+// Custom hooks
 import {
-  fetchLargeImageContainerSections,
-  fetchThreeBlockSections,
-  fetchTextAndImageSections,
-  fetchLastSections,
-} from "@/app/utils/api";
-
-type LargeImageContainerSection = {
-  banner_title: string;
-  banner_image: string;
-};
-
-type presentationSection = {
-  presentation_title: string;
-  presentation_paragraph: string;
-  presentation_image: string;
-};
-
-type advantagesContentSection = {
-  section_introduction: string;
-  bloc_1_image: string;
-  bloc_1_titre: string;
-  bloc_1_paragraph: string;
-  bloc_2_image: string;
-  bloc_2_titre: string;
-  bloc_2_paragraph: string;
-  bloc_3_image: string;
-  bloc_3_titre: string;
-  bloc_3_paragraph: string;
-};
-
-type servicesContentSection = {
-  section_introduction: string;
-  bloc_1_image: string;
-  bloc_1_titre: string;
-  bloc_1_paragraph: string;
-  bloc_2_image: string;
-  bloc_2_titre: string;
-  bloc_2_paragraph: string;
-  bloc_3_image: string;
-  bloc_3_titre: string;
-  bloc_3_paragraph: string;
-};
-
-type lastSection = {
-  lastsection_title: string;
-  lastsection_paragraph: string;
-};
+  useLargeImageContainerSectionsData,
+  usePresentationSectionData,
+  useThreeblocksSectionData,
+  useLastSectionsData,
+} from "../hooks/useData";
 
 export default function Home() {
-  const [LargeImageContainerSection, setLargeImageContainerSection] =
-    useState<LargeImageContainerSection | null>(null);
-  const [presentationContent, setPresentationContent] =
-    useState<presentationSection | null>(null);
-  const [advantagesContentSection, setAdvantagesContentSection] =
-    useState<advantagesContentSection | null>(null);
-  const [servicesContentSection, setServicesContentSection] =
-    useState<servicesContentSection | null>(null);
-  const [lastSectionContent, setLastSectionContent] =
-    useState<lastSection | null>(null);
-
-  const fetchLargeImageContainerSectionsData = async () => {
-    try {
-      const largeImageContainerSectionsList =
-        await fetchLargeImageContainerSections();
-      const largeImageContainerData = largeImageContainerSectionsList[0].acf;
-
-      if (largeImageContainerData) {
-        setLargeImageContainerSection(largeImageContainerData);
-      }
-    } catch (error) {
-      console.error(
-        "Une erreur est survenue lors de la récupération de la section",
-        error
-      );
-    }
-  };
-
-  const fetchPresentationData = async () => {
-    try {
-      const textAndImageSectionsList = await fetchTextAndImageSections();
-      const presentationContentData = textAndImageSectionsList[0].acf;
-
-      if (presentationContentData) {
-        setPresentationContent(presentationContentData);
-      }
-    } catch (error) {
-      console.error(
-        "Une erreur est survenue lors de la récupération de la section",
-        error
-      );
-    }
-  };
-
-  const fetchThreeblocksSectionData = async () => {
-    try {
-      const threeBlockSectionsList = await fetchThreeBlockSections();
-      const advantagesContentData = threeBlockSectionsList[1].acf;
-      const servicesContentSection = threeBlockSectionsList[0].acf;
-
-      if (threeBlockSectionsList) {
-        setAdvantagesContentSection(advantagesContentData);
-        setServicesContentSection(servicesContentSection);
-      }
-    } catch (error) {
-      console.error(
-        "Une erreur est survenue lors de la récupération de la section",
-        error
-      );
-    }
-  };
-
-  const fetchLastSectionsData = async () => {
-    try {
-      const lastSectionsList = await fetchLastSections();
-      const homePageLastSection = lastSectionsList[0].acf;
-
-      if (homePageLastSection) {
-        setLastSectionContent(homePageLastSection);
-      }
-    } catch (error) {
-      console.error(
-        "Une erreur est survenue lors de la récupération de la section",
-        error
-      );
-    }
-  };
-
-  useEffect(() => {
-    fetchLargeImageContainerSectionsData();
-    fetchPresentationData();
-    fetchThreeblocksSectionData();
-    fetchLastSectionsData();
-  }, []);
+  const { homepageLargeImage } = useLargeImageContainerSectionsData();
+  const { presentationContent } = usePresentationSectionData();
+  const { advantagesContent, servicesContent } = useThreeblocksSectionData();
+  const lastSectionContent = useLastSectionsData();
 
   return (
     <Layout>
-      {LargeImageContainerSection && (
+      {homepageLargeImage && (
         <LargeImageContainer
-          image={LargeImageContainerSection.banner_image}
-          title={LargeImageContainerSection.banner_title}
+          image={homepageLargeImage.banner_image}
+          title={homepageLargeImage.banner_title}
         />
       )}
 
@@ -168,34 +43,34 @@ export default function Home() {
         />
       )}
 
-      {advantagesContentSection && (
+      {advantagesContent && (
         <ThreeBlocksSection
-          sectionIntroduction={advantagesContentSection.section_introduction}
-          image1={advantagesContentSection.bloc_1_image}
-          title1={advantagesContentSection.bloc_1_titre}
-          paragraph1={advantagesContentSection.bloc_1_paragraph}
-          image2={advantagesContentSection.bloc_2_image}
-          title2={advantagesContentSection.bloc_2_titre}
-          paragraph2={advantagesContentSection.bloc_3_paragraph}
-          image3={advantagesContentSection.bloc_3_image}
-          title3={advantagesContentSection.bloc_3_titre}
-          paragraph3={advantagesContentSection.bloc_3_paragraph}
+          sectionIntroduction={advantagesContent.section_introduction}
+          image1={advantagesContent.bloc_1_image}
+          title1={advantagesContent.bloc_1_titre}
+          paragraph1={advantagesContent.bloc_1_paragraph}
+          image2={advantagesContent.bloc_2_image}
+          title2={advantagesContent.bloc_2_titre}
+          paragraph2={advantagesContent.bloc_3_paragraph}
+          image3={advantagesContent.bloc_3_image}
+          title3={advantagesContent.bloc_3_titre}
+          paragraph3={advantagesContent.bloc_3_paragraph}
         />
       )}
 
       <SectionWithBackgroundColor />
-      {servicesContentSection && (
+      {servicesContent && (
         <ThreeBlocksSection
-          sectionIntroduction={servicesContentSection.section_introduction}
-          image1={servicesContentSection.bloc_1_image}
-          title1={servicesContentSection.bloc_1_titre}
-          paragraph1={servicesContentSection.bloc_1_paragraph}
-          image2={servicesContentSection.bloc_2_image}
-          title2={servicesContentSection.bloc_2_titre}
-          paragraph2={servicesContentSection.bloc_3_paragraph}
-          image3={servicesContentSection.bloc_3_image}
-          title3={servicesContentSection.bloc_3_titre}
-          paragraph3={servicesContentSection.bloc_3_paragraph}
+          sectionIntroduction={servicesContent.section_introduction}
+          image1={servicesContent.bloc_1_image}
+          title1={servicesContent.bloc_1_titre}
+          paragraph1={servicesContent.bloc_1_paragraph}
+          image2={servicesContent.bloc_2_image}
+          title2={servicesContent.bloc_2_titre}
+          paragraph2={servicesContent.bloc_3_paragraph}
+          image3={servicesContent.bloc_3_image}
+          title3={servicesContent.bloc_3_titre}
+          paragraph3={servicesContent.bloc_3_paragraph}
         />
       )}
 
