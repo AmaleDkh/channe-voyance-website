@@ -78,6 +78,40 @@ export const fetchThreeBlockSections = async () => {
     }
 
     const sections = await response.json();
+    return sections;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des sections", error);
+    throw error;
+  }
+};
+
+// Get all five block sections
+export const fetchFiveBlockSections = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/five_blocks_section`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET des sections");
+    }
+
+    const sections = await response.json();
+    return sections;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des sections", error);
+    throw error;
+  }
+};
+
+// Get all benefits sections
+export const fetchBenefitsSections = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/benefits_section`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET des sections");
+    }
+
+    const sections = await response.json();
     console.log("sections", sections);
     return sections;
   } catch (error) {

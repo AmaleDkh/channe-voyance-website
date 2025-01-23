@@ -6,7 +6,9 @@ import {
   fetchLargeImageContainerSections,
   fetchPageIntroductionSections,
   fetchThreeBlockSections,
+  fetchFiveBlockSections,
   fetchTextAndImageSections,
+  fetchBenefitsSections,
   fetchLastSections,
 } from "@/app/utils/api";
 
@@ -37,6 +39,36 @@ type ThreeBlockSection = {
   bloc_3_image: string;
   bloc_3_titre: string;
   bloc_3_paragraph: string;
+};
+
+type FiveBlockSection = {
+  section_introduction: string;
+  bloc_1_image: string;
+  bloc_1_title: string;
+  bloc_1_paragraph: string;
+  bloc_2_image: string;
+  bloc_2_title: string;
+  bloc_2_paragraph: string;
+  bloc_3_image: string;
+  bloc_3_title: string;
+  bloc_3_paragraph: string;
+  bloc_4_image: string;
+  bloc_4_title: string;
+  bloc_4_paragraph: string;
+  bloc_5_image: string;
+  bloc_5_title: string;
+  bloc_5_paragraph: string;
+};
+
+type BenefitsSection = {
+  section_title: string;
+  section_introduction: string;
+  section_image: string;
+  section_benefit_1: string;
+  section_benefit_2: string;
+  section_benefit_3: string;
+  section_benefit_4: string;
+  section_benefit_5: string;
 };
 
 type lastSection = {
@@ -193,6 +225,7 @@ export const useThreeblocksSectionData = () => {
     const fetchData = async () => {
       try {
         const threeBlockSectionsList = await fetchThreeBlockSections();
+
         const advantagesContentData = threeBlockSectionsList[3].acf;
         const servicesContentSection = threeBlockSectionsList[2].acf;
         const readingAdvantagesContentData = threeBlockSectionsList[1].acf;
@@ -222,17 +255,19 @@ export const useThreeblocksSectionData = () => {
   };
 };
 
-export const useLastSectionsData = () => {
-  const [data, setData] = useState<lastSection | null>(null);
+export const useFiveblocksSectionData = () => {
+  const [energyCareAdvantagesContent, setEnergyCareAdvantagesContent] =
+    useState<FiveBlockSection | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const lastSectionsList = await fetchLastSections();
-        const homePageLastSection = lastSectionsList[0].acf;
+        const fiveBlockSectionsList = await fetchFiveBlockSections();
 
-        if (homePageLastSection) {
-          setData(homePageLastSection);
+        const energyCareAdvantagesContentData = fiveBlockSectionsList[0].acf;
+
+        if (energyCareAdvantagesContentData) {
+          setEnergyCareAdvantagesContent(energyCareAdvantagesContentData);
         }
       } catch (error) {
         console.error(
@@ -244,5 +279,99 @@ export const useLastSectionsData = () => {
     fetchData();
   }, []);
 
-  return data;
+  return energyCareAdvantagesContent;
+};
+
+export const useBenefitsSectionData = () => {
+  const [readingBenefitsContent, setReadingBenefitsContent] =
+    useState<BenefitsSection | null>(null);
+
+  const [meditationBenefitsContent, setMeditationBenefitsContent] =
+    useState<BenefitsSection | null>(null);
+
+  const [energyCareBenefitsContent, setEnergyCareBenefitsContent] =
+    useState<BenefitsSection | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const benefitsSectionsList = await fetchBenefitsSections();
+
+        const readingBenefitsContentData = benefitsSectionsList[2].acf;
+        const meditationBenefitsContentData = benefitsSectionsList[1].acf;
+        const energyCareBenefitsContentData = benefitsSectionsList[0].acf;
+
+        if (readingBenefitsContentData) {
+          setReadingBenefitsContent(readingBenefitsContentData);
+          setMeditationBenefitsContent(meditationBenefitsContentData);
+          setEnergyCareBenefitsContent(energyCareBenefitsContentData);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    readingBenefitsContent,
+    meditationBenefitsContent,
+    energyCareBenefitsContent,
+  };
+};
+
+export const useLastSectionsData = () => {
+  const [homepageLastContent, setHomepageLastContent] =
+    useState<lastSection | null>(null);
+
+  const [aboutLastContent, setAboutLastContent] = useState<lastSection | null>(
+    null
+  );
+
+  const [readingLastContent, setReadingLastContent] =
+    useState<lastSection | null>(null);
+
+  const [meditationLastContent, setMeditationLastContent] =
+    useState<lastSection | null>(null);
+
+  const [energyCareLastContent, setEnergyCareLastContent] =
+    useState<lastSection | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const lastSectionsList = await fetchLastSections();
+        const homePageLastSection = lastSectionsList[4].acf;
+        const aboutPageLastSection = lastSectionsList[3].acf;
+        const readingPageLastSection = lastSectionsList[2].acf;
+        const meditationPageLastSection = lastSectionsList[1].acf;
+        const energyCarePageLastSection = lastSectionsList[0].acf;
+
+        if (homePageLastSection) {
+          setHomepageLastContent(homePageLastSection);
+          setAboutLastContent(aboutPageLastSection);
+          setReadingLastContent(readingPageLastSection);
+          setMeditationLastContent(meditationPageLastSection);
+          setEnergyCareLastContent(energyCarePageLastSection);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    homepageLastContent,
+    aboutLastContent,
+    readingLastContent,
+    meditationLastContent,
+    energyCareLastContent,
+  };
 };

@@ -6,6 +6,8 @@ import LargeImageContainer from "../../components/LargeImageContainer/LargeImage
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ThreeBlocksSection from "../../components/ThreeBlocksSection/ThreeBlocksSection";
 import Reviews from "../../components/Reviews/Reviews";
+import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
+import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -14,13 +16,17 @@ import "../../assets/Global.scss";
 import {
   useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
+  useBenefitsSectionData,
   useThreeblocksSectionData,
+  useLastSectionsData,
 } from "../../../hooks/useData";
 
 function Reading() {
   const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { readingIntroduction } = usePageIntroductionSectionsData();
   const { readingAdvantagesContent } = useThreeblocksSectionData();
+  const { readingLastContent } = useLastSectionsData();
+  const { readingBenefitsContent } = useBenefitsSectionData();
 
   return (
     <Layout>
@@ -32,6 +38,19 @@ function Reading() {
         <PageIntroduction
           title={readingIntroduction.introduction_title}
           subtitle={readingIntroduction.introduction_subtitle}
+        />
+      )}
+
+      {readingBenefitsContent && (
+        <BenefitsSection
+          title={readingBenefitsContent.section_title}
+          introduction={readingBenefitsContent.section_introduction}
+          image={readingBenefitsContent.section_image}
+          benefit1={readingBenefitsContent.section_benefit_1}
+          benefit2={readingBenefitsContent.section_benefit_2}
+          benefit3={readingBenefitsContent.section_benefit_3}
+          benefit4={readingBenefitsContent.section_benefit_4}
+          benefit5={readingBenefitsContent.section_benefit_5}
         />
       )}
 
@@ -47,10 +66,18 @@ function Reading() {
           image3={readingAdvantagesContent.bloc_3_image}
           title3={readingAdvantagesContent.bloc_3_titre}
           paragraph3={readingAdvantagesContent.bloc_3_paragraph}
+          flexVersion="column-version"
         />
       )}
 
       <Reviews />
+
+      {readingLastContent && (
+        <LastSectionWithButton
+          title={readingLastContent.lastsection_title}
+          paragraph={readingLastContent.lastsection_paragraph}
+        />
+      )}
     </Layout>
   );
 }

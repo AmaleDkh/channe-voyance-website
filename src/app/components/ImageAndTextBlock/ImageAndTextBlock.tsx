@@ -1,5 +1,6 @@
-// Next element
+// Next elements
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Style
 import "./ImageAndTextBlock.scss";
@@ -8,15 +9,19 @@ interface imageAndTextBlockProps {
   image: string;
   title: string;
   paragraph: string;
+  flexVersion: string;
 }
 
 function ImageAndTextBlock({
   image,
   title,
   paragraph,
+  flexVersion,
 }: imageAndTextBlockProps) {
+  const pathname = usePathname();
+
   return (
-    <div className="image-and-text-block">
+    <div className={`image-and-text-block ${flexVersion}`}>
       <div className="image-and-text-block__image-container">
         <Image
           src={image}

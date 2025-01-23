@@ -5,12 +5,14 @@ import Layout from "../../components/Layout/Layout";
 import LargeImageContainer from "../../components/LargeImageContainer/LargeImageContainer";
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ImageAndTextSection from "../../components/ImageAndTextSection/ImageAndTextSection";
+import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
 
 // Custom hooks
 import {
   useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   usePresentationSectionData,
+  useLastSectionsData,
 } from "../../../hooks/useData";
 
 function About() {
@@ -18,6 +20,7 @@ function About() {
   const { firstPartStory, secondPartStory, thirdPartStory, fourthPartStory } =
     usePresentationSectionData();
   const { aboutIntroduction } = usePageIntroductionSectionsData();
+  const { aboutLastContent } = useLastSectionsData();
 
   return (
     <Layout>
@@ -61,6 +64,13 @@ function About() {
           image={fourthPartStory.presentation_image}
           title={fourthPartStory.presentation_title}
           paragraph={fourthPartStory.presentation_paragraph}
+        />
+      )}
+
+      {aboutLastContent && (
+        <LastSectionWithButton
+          title={aboutLastContent.lastsection_title}
+          paragraph={aboutLastContent.lastsection_paragraph}
         />
       )}
     </Layout>

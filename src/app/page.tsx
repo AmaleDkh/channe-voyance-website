@@ -24,7 +24,7 @@ export default function Home() {
   const { homepageLargeImage } = useLargeImageContainerSectionsData();
   const { presentationContent } = usePresentationSectionData();
   const { advantagesContent, servicesContent } = useThreeblocksSectionData();
-  const lastSectionContent = useLastSectionsData();
+  const { homepageLastContent } = useLastSectionsData();
 
   return (
     <Layout>
@@ -55,10 +55,12 @@ export default function Home() {
           image3={advantagesContent.bloc_3_image}
           title3={advantagesContent.bloc_3_titre}
           paragraph3={advantagesContent.bloc_3_paragraph}
+          flexVersion=""
         />
       )}
 
       <SectionWithBackgroundColor />
+
       {servicesContent && (
         <ThreeBlocksSection
           sectionIntroduction={servicesContent.section_introduction}
@@ -71,14 +73,15 @@ export default function Home() {
           image3={servicesContent.bloc_3_image}
           title3={servicesContent.bloc_3_titre}
           paragraph3={servicesContent.bloc_3_paragraph}
+          flexVersion=""
         />
       )}
 
       <Reviews />
 
-      {lastSectionContent && (
+      {homepageLastContent && (
         <LastSectionWithButton
-          title={lastSectionContent.lastsection_title}
+          title={homepageLastContent.lastsection_title}
           paragraph=""
         />
       )}
