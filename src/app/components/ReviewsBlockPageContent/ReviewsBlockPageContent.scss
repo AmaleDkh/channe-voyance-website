@@ -1,0 +1,30 @@
+@import "../../assets/Colors.scss";
+
+.reviews-page-section {
+  margin: 96px 120px;
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    gap: 400px;
+    align-items: center;
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      background-color: $dark-beige-color;
+      padding: 40px;
+      &__name {
+        margin: 24px 0 0 0;
+        color: black;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.reviews-page-section__block--row-reverse-version {
+  flex-direction: row-reverse;
+}

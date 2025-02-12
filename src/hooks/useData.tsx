@@ -168,16 +168,20 @@ export const usePageIntroductionSectionsData = () => {
   const [storeIntroduction, setStoreIntroduction] =
     useState<PageIntroductionSection | null>(null);
 
+  const [reviewsIntroduction, setReviewsIntroduction] =
+    useState<PageIntroductionSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const pageIntroductionSectionsList =
           await fetchPageIntroductionSections();
-        const homepageIntroductionData = pageIntroductionSectionsList[4].acf;
-        const readingIntroductionData = pageIntroductionSectionsList[3].acf;
-        const meditationIntroductionData = pageIntroductionSectionsList[2].acf;
-        const energyCareIntroductionData = pageIntroductionSectionsList[1].acf;
-        const storeIntroductionData = pageIntroductionSectionsList[0].acf;
+        const homepageIntroductionData = pageIntroductionSectionsList[5].acf;
+        const readingIntroductionData = pageIntroductionSectionsList[4].acf;
+        const meditationIntroductionData = pageIntroductionSectionsList[3].acf;
+        const energyCareIntroductionData = pageIntroductionSectionsList[2].acf;
+        const storeIntroductionData = pageIntroductionSectionsList[1].acf;
+        const reviewsIntroductionData = pageIntroductionSectionsList[0].acf;
 
         if (pageIntroductionSectionsList) {
           setAboutIntroduction(homepageIntroductionData);
@@ -185,6 +189,7 @@ export const usePageIntroductionSectionsData = () => {
           setMeditationIntroduction(meditationIntroductionData);
           setEnergyCareIntroduction(energyCareIntroductionData);
           setStoreIntroduction(storeIntroductionData);
+          setReviewsIntroduction(reviewsIntroductionData);
         }
       } catch (error) {
         console.error(
@@ -202,6 +207,7 @@ export const usePageIntroductionSectionsData = () => {
     meditationIntroduction,
     energyCareIntroduction,
     storeIntroduction,
+    reviewsIntroduction,
   };
 };
 
@@ -478,15 +484,19 @@ export const useLastSectionsData = () => {
   const [energyCareLastContent, setEnergyCareLastContent] =
     useState<lastSection | null>(null);
 
+  const [reviewsLastContent, setReviewsLastContent] =
+    useState<lastSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const lastSectionsList = await fetchLastSections();
-        const homePageLastSection = lastSectionsList[4].acf;
-        const aboutPageLastSection = lastSectionsList[3].acf;
-        const readingPageLastSection = lastSectionsList[2].acf;
-        const meditationPageLastSection = lastSectionsList[1].acf;
-        const energyCarePageLastSection = lastSectionsList[0].acf;
+        const homePageLastSection = lastSectionsList[5].acf;
+        const aboutPageLastSection = lastSectionsList[4].acf;
+        const readingPageLastSection = lastSectionsList[3].acf;
+        const meditationPageLastSection = lastSectionsList[2].acf;
+        const energyCarePageLastSection = lastSectionsList[1].acf;
+        const reviewsPageLastSection = lastSectionsList[0].acf;
 
         if (homePageLastSection) {
           setHomepageLastContent(homePageLastSection);
@@ -494,6 +504,7 @@ export const useLastSectionsData = () => {
           setReadingLastContent(readingPageLastSection);
           setMeditationLastContent(meditationPageLastSection);
           setEnergyCareLastContent(energyCarePageLastSection);
+          setReviewsLastContent(reviewsPageLastSection);
         }
       } catch (error) {
         console.error(
@@ -511,5 +522,6 @@ export const useLastSectionsData = () => {
     readingLastContent,
     meditationLastContent,
     energyCareLastContent,
+    reviewsLastContent,
   };
 };
