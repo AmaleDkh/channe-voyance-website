@@ -8,6 +8,7 @@ import ImageAndTextBlock from "../ImageAndTextBlock/ImageAndTextBlock";
 import "./ThreeBlocksSection.scss";
 
 interface ThreeBlocksSectionProps {
+  sectionTitle: string;
   sectionIntroduction: string;
   image1: string;
   title1: string;
@@ -20,7 +21,9 @@ interface ThreeBlocksSectionProps {
   paragraph3: string;
   flexVersion: string;
 }
+
 function ThreeBlocksSection({
+  sectionTitle,
   sectionIntroduction,
   image1,
   title1,
@@ -37,9 +40,10 @@ function ThreeBlocksSection({
 
   return (
     <section className="three-blocks-section">
-      <p className="three-blocks-section__introduction">
-        {sectionIntroduction}
-      </p>
+      <h2 className="three-blocks-section__title">{sectionTitle}</h2>
+
+      <p className="three-blocks-section__paragraph">{sectionIntroduction}</p>
+
       <div
         className={`three-blocks-section__three-blocks-container ${flexVersion}`}
       >

@@ -31,7 +31,7 @@ function BenefitsSection({
   return (
     <section className="benefits-section">
       <div className="benefits-section__text">
-        <p className="benefits-section__text__title">{title}</p>
+        <h2 className="benefits-section__text__title">{title}</h2>
         <p className="benefits-section__text__paragraph">{introduction}</p>
       </div>
 
@@ -43,17 +43,15 @@ function BenefitsSection({
           <li className="benefits-section__content__list__item">{benefit4}</li>
           <li className="benefits-section__content__list__item">{benefit5}</li>
         </ul>
-
-        <div className="benefits-section__image-container">
-          <Image
-            src={image}
-            alt=""
-            className="benefits-section__image-container__image"
-            width={384}
-            height={384}
-          />
-        </div>
       </div>
+
+      <Image
+        src={image}
+        alt=""
+        className="benefits-section__image-container__image"
+        width={600}
+        height={600}
+      />
     </section>
   );
 }

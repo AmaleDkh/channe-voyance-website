@@ -1,3 +1,7 @@
+@import "../../assets/Colors.scss";
+
 .footer {
-  margin: 48px 120px;
+  padding: 24px 120px;
+  background-color: $dark-beige-color;
+  text-align: center;
 }

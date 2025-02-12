@@ -1,0 +1,59 @@
+@import "../../assets/Colors.scss";
+
+.two-images-and-text-section {
+  display: flex;
+  align-items: center;
+  gap: 104px;
+  margin: 96px 0 352px 120px;
+  position: relative;
+
+  &__first-image-container,
+  &__second-image-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__first-image-container {
+    width: 600px;
+    height: 800px;
+
+    &__image {
+      width: 600px;
+      height: 800px;
+      object-fit: cover;
+    }
+  }
+
+  &__second-image-container {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    top: 280px;
+    right: 418px;
+
+    &__image {
+      width: 400px;
+      height: 600px;
+
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-right: 280px;
+
+    &__paragraph {
+      margin: 0;
+    }
+
+    &__button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -6,8 +6,10 @@ import LargeImageContainer from "../../components/LargeImageContainer/LargeImage
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import Reviews from "../../components/Reviews/Reviews";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
-import FiveBlocksSection from "@/app/components/FiveBlocksSection/FiveBlocksSection";
 import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
+import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
+import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -17,22 +19,26 @@ import {
   useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   useBenefitsSectionData,
-  useFiveblocksSectionData,
+  useTextAndImageSectionData,
+  useFaqSectionData,
   useLastSectionsData,
+  useThreeblocksSectionData,
 } from "../../../hooks/useData";
 
 function EnergyCare() {
   const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { energyCareIntroduction } = usePageIntroductionSectionsData();
-  const energyCareAdvantagesContent = useFiveblocksSectionData();
   const { energyCareLastContent } = useLastSectionsData();
   const { energyCareBenefitsContent } = useBenefitsSectionData();
+  const { energyCareFaqContent } = useFaqSectionData();
+  const { PlacePresentation } = useTextAndImageSectionData();
+  const { energyCareStepsContent } = useThreeblocksSectionData();
 
   return (
     <Layout>
-      {aboutLargeImage && (
+      {/* {aboutLargeImage && (
         <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )}
+      )} */}
 
       {energyCareIntroduction && (
         <PageIntroduction
@@ -54,28 +60,59 @@ function EnergyCare() {
         />
       )}
 
-      {energyCareAdvantagesContent && (
-        <FiveBlocksSection
-          sectionIntroduction={energyCareAdvantagesContent.section_introduction}
-          image1={energyCareAdvantagesContent.bloc_1_image}
-          title1={energyCareAdvantagesContent.bloc_1_title}
-          paragraph1={energyCareAdvantagesContent.bloc_1_paragraph}
-          image2={energyCareAdvantagesContent.bloc_2_image}
-          title2={energyCareAdvantagesContent.bloc_2_title}
-          paragraph2={energyCareAdvantagesContent.bloc_3_paragraph}
-          image3={energyCareAdvantagesContent.bloc_3_image}
-          title3={energyCareAdvantagesContent.bloc_3_title}
-          paragraph3={energyCareAdvantagesContent.bloc_3_paragraph}
-          image4={energyCareAdvantagesContent.bloc_4_image}
-          title4={energyCareAdvantagesContent.bloc_4_title}
-          paragraph4={energyCareAdvantagesContent.bloc_4_paragraph}
-          image5={energyCareAdvantagesContent.bloc_5_image}
-          title5={energyCareAdvantagesContent.bloc_5_title}
-          paragraph5={energyCareAdvantagesContent.bloc_5_paragraph}
+      {energyCareStepsContent && (
+        <ThreeBlocksSection
+          sectionTitle={energyCareStepsContent.section_title}
+          sectionIntroduction=""
+          image1={energyCareStepsContent.bloc_1_image}
+          title1={energyCareStepsContent.bloc_1_titre}
+          paragraph1={energyCareStepsContent.bloc_1_paragraph}
+          image2={energyCareStepsContent.bloc_2_image}
+          title2={energyCareStepsContent.bloc_2_titre}
+          paragraph2={energyCareStepsContent.bloc_3_paragraph}
+          image3={energyCareStepsContent.bloc_3_image}
+          title3={energyCareStepsContent.bloc_3_titre}
+          paragraph3={energyCareStepsContent.bloc_3_paragraph}
+          flexVersion=""
         />
       )}
 
       <Reviews />
+
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
+      {energyCareFaqContent && (
+        <FrequentlyAskedQuestions
+          question1={energyCareFaqContent.faq_section_question1}
+          answer1={energyCareFaqContent.faq_section_answer1}
+          question2={energyCareFaqContent.faq_section_question2}
+          answer2={energyCareFaqContent.faq_section_answer2}
+          question3={energyCareFaqContent.faq_section_question3}
+          answer3={energyCareFaqContent.faq_section_answer3}
+          question4={energyCareFaqContent.faq_section_question4}
+          answer4={energyCareFaqContent.faq_section_answer4}
+          question5={energyCareFaqContent.faq_section_question5}
+          answer5={energyCareFaqContent.faq_section_answer5}
+          question6={energyCareFaqContent.faq_section_question6}
+          answer6={energyCareFaqContent.faq_section_answer6}
+          question7={energyCareFaqContent.faq_section_question7}
+          answer7={energyCareFaqContent.faq_section_answer7}
+          question8={energyCareFaqContent.faq_section_question8}
+          answer8={energyCareFaqContent.faq_section_answer8}
+          question9={energyCareFaqContent.faq_section_question9}
+          answer9={energyCareFaqContent.faq_section_answer9}
+          question10={energyCareFaqContent.faq_section_question10}
+          answer10={energyCareFaqContent.faq_section_answer10}
+          image={energyCareFaqContent.faq_section_image}
+        />
+      )}
 
       {energyCareLastContent && (
         <LastSectionWithButton

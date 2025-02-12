@@ -43,7 +43,9 @@ function FiveBlocksSection({
 }: ThreeBlocksSectionProps) {
   return (
     <section className="five-blocks-section">
-      <p className="five-blocks-section__introduction">{sectionIntroduction}</p>
+      <h3 className="five-blocks-section__introduction">
+        {sectionIntroduction}
+      </h3>
       <div className="five-blocks-section__five-blocks-container">
         <ImageAndTextBlock
           image={image1}

@@ -8,6 +8,9 @@ import ThreeBlocksSection from "../../components/ThreeBlocksSection/ThreeBlocksS
 import Reviews from "../../components/Reviews/Reviews";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
 import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
+import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import TwoImagesAndTextSection from "@/app/components/TwoImagesAndTextSection/TwoImagesAndTextSection";
+import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -18,6 +21,8 @@ import {
   usePageIntroductionSectionsData,
   useThreeblocksSectionData,
   useBenefitsSectionData,
+  useFaqSectionData,
+  useTextAndImageSectionData,
   useLastSectionsData,
 } from "../../../hooks/useData";
 
@@ -27,12 +32,15 @@ function Meditation() {
   const { meditationAdvantagesContent } = useThreeblocksSectionData();
   const { meditationLastContent } = useLastSectionsData();
   const { meditationBenefitsContent } = useBenefitsSectionData();
+  const { meditationFaqContent } = useFaqSectionData();
+  const { meditationPageSelfPractice } = useTextAndImageSectionData();
+  const { PlacePresentation } = useTextAndImageSectionData();
 
   return (
     <Layout>
-      {aboutLargeImage && (
+      {/* {aboutLargeImage && (
         <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )}
+      )} */}
 
       {meditationIntroduction && (
         <PageIntroduction
@@ -56,7 +64,8 @@ function Meditation() {
 
       {meditationAdvantagesContent && (
         <ThreeBlocksSection
-          sectionIntroduction={meditationAdvantagesContent.section_introduction}
+          sectionTitle={meditationAdvantagesContent.section_title}
+          sectionIntroduction=""
           image1={meditationAdvantagesContent.bloc_1_image}
           title1={meditationAdvantagesContent.bloc_1_titre}
           paragraph1={meditationAdvantagesContent.bloc_1_paragraph}
@@ -66,11 +75,55 @@ function Meditation() {
           image3={meditationAdvantagesContent.bloc_3_image}
           title3={meditationAdvantagesContent.bloc_3_titre}
           paragraph3={meditationAdvantagesContent.bloc_3_paragraph}
-          flexVersion="column-version"
+          flexVersion=""
+        />
+      )}
+
+      {meditationPageSelfPractice && (
+        <TwoImagesAndTextSection
+          title={meditationPageSelfPractice.text_and_image_title}
+          paragraph={meditationPageSelfPractice.text_and_image_paragraph}
+          firstImage={meditationPageSelfPractice.text_and_image_first_image}
+          secondImage={meditationPageSelfPractice.text_and_image_second_image}
         />
       )}
 
       <Reviews />
+
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
+      {meditationFaqContent && (
+        <FrequentlyAskedQuestions
+          question1={meditationFaqContent.faq_section_question1}
+          answer1={meditationFaqContent.faq_section_answer1}
+          question2={meditationFaqContent.faq_section_question2}
+          answer2={meditationFaqContent.faq_section_answer2}
+          question3={meditationFaqContent.faq_section_question3}
+          answer3={meditationFaqContent.faq_section_answer3}
+          question4={meditationFaqContent.faq_section_question4}
+          answer4={meditationFaqContent.faq_section_answer4}
+          question5={meditationFaqContent.faq_section_question5}
+          answer5={meditationFaqContent.faq_section_answer5}
+          question6={meditationFaqContent.faq_section_question6}
+          answer6={meditationFaqContent.faq_section_answer6}
+          question7={meditationFaqContent.faq_section_question7}
+          answer7={meditationFaqContent.faq_section_answer7}
+          question8={meditationFaqContent.faq_section_question8}
+          answer8={meditationFaqContent.faq_section_answer8}
+          question9={meditationFaqContent.faq_section_question9}
+          answer9={meditationFaqContent.faq_section_answer9}
+          question10={meditationFaqContent.faq_section_question10}
+          answer10={meditationFaqContent.faq_section_answer10}
+          image={meditationFaqContent.faq_section_image}
+        />
+      )}
 
       {meditationLastContent && (
         <LastSectionWithButton

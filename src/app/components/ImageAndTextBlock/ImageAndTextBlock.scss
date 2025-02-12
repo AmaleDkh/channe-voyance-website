@@ -8,20 +8,15 @@
   gap: 56px;
 
   &__image-container {
-    width: 216px;
-    height: 216px;
-    border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    background-color: $light-gold-color;
 
     &__image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 300px;
+      height: 400px;
       object-fit: cover;
     }
   }
@@ -43,8 +38,8 @@
   }
 }
 
-.row-version {
-  flex-direction: row;
-  gap: 56px;
-  text-align: left;
-}
+// .row-version {
+//   flex-direction: row;
+//   gap: 56px;
+//   text-align: left;
+// }

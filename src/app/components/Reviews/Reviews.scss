@@ -1,12 +1,15 @@
 @import "../../assets/Colors.scss";
 
 .reviews-section {
-  background-color: $light-light-gold-color;
-  padding: 136px 120px;
-  margin-bottom: 136px;
+  background-color: $light-beige-color;
+  padding: 96px 120px;
+  margin-bottom: 96px;
   text-align: center;
 
-  &__name {
-    margin: 0 0 24px 0;
+  &__content {
+    &__name {
+      margin: 0 0 24px 0;
+      color: black;
+    }
   }
 }

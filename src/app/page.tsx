@@ -15,14 +15,15 @@ import "./assets/Global.scss";
 // Custom hooks
 import {
   useLargeImageContainerSectionsData,
-  usePresentationSectionData,
+  useTextAndImageSectionData,
   useThreeblocksSectionData,
   useLastSectionsData,
 } from "../hooks/useData";
+import Button from "./components/Button/Button";
 
 export default function Home() {
   const { homepageLargeImage } = useLargeImageContainerSectionsData();
-  const { presentationContent } = usePresentationSectionData();
+  const { presentationContent } = useTextAndImageSectionData();
   const { advantagesContent, servicesContent } = useThreeblocksSectionData();
   const { homepageLastContent } = useLastSectionsData();
 
@@ -32,19 +33,24 @@ export default function Home() {
         <LargeImageContainer
           image={homepageLargeImage.banner_image}
           title={homepageLargeImage.banner_title}
+          introduction={homepageLargeImage.banner_introduction}
         />
       )}
 
       {presentationContent && (
         <ImageAndTextSection
-          image={presentationContent.presentation_image}
-          title={presentationContent.presentation_title}
-          paragraph={presentationContent.presentation_paragraph}
+          title={presentationContent.text_and_image_title}
+          paragraph={presentationContent.text_and_image_paragraph}
+          firstImage={presentationContent.text_and_image_first_image}
+          rowVersion="image-and-text-section___row-reverse-version"
+          titleColorVersion=""
+          backgroundColorVersion="image-and-text-section___beige-background-color-version"
         />
       )}
 
       {advantagesContent && (
         <ThreeBlocksSection
+          sectionTitle={advantagesContent.section_title}
           sectionIntroduction={advantagesContent.section_introduction}
           image1={advantagesContent.bloc_1_image}
           title1={advantagesContent.bloc_1_titre}
@@ -63,6 +69,7 @@ export default function Home() {
 
       {servicesContent && (
         <ThreeBlocksSection
+          sectionTitle={servicesContent.section_title}
           sectionIntroduction={servicesContent.section_introduction}
           image1={servicesContent.bloc_1_image}
           title1={servicesContent.bloc_1_titre}
@@ -77,12 +84,16 @@ export default function Home() {
         />
       )}
 
+      <div className="button-block">
+        <Button text="Tout savoir sur les approches proposées" />
+      </div>
+
       <Reviews />
 
       {homepageLastContent && (
         <LastSectionWithButton
           title={homepageLastContent.lastsection_title}
-          paragraph=""
+          paragraph={homepageLastContent.lastsection_paragraph}
         />
       )}
     </Layout>

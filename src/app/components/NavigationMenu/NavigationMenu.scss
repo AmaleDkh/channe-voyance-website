@@ -3,4 +3,31 @@
     display: flex;
     gap: 40px;
   }
+
+  &__practices {
+    position: absolute;
+    top: 24px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: max-content;
+    padding-top: 16px;
+  }
+
+  &__list {
+    &__item {
+      position: relative;
+
+      &--pratices-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+.fa-caret-down {
+  cursor: pointer;
 }

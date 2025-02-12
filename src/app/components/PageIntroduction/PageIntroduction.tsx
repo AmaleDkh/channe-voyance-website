@@ -9,7 +9,7 @@ interface pageIntroductionProps {
 function PageIntroduction({ title, subtitle }: pageIntroductionProps) {
   return (
     <section className="page-introduction">
-      <h2 className="page-introduction__title">{title}</h2>
+      <h1 className="page-introduction__title">{title}</h1>
       <p className="page-introduction__subtitle">{subtitle}</p>
     </section>
   );

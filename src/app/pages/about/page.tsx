@@ -7,26 +7,29 @@ import PageIntroduction from "../../components/PageIntroduction/PageIntroduction
 import ImageAndTextSection from "../../components/ImageAndTextSection/ImageAndTextSection";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
 
+// Style
+import "../../assets/Global.scss";
+
 // Custom hooks
 import {
   useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
-  usePresentationSectionData,
+  useTextAndImageSectionData,
   useLastSectionsData,
 } from "../../../hooks/useData";
 
 function About() {
   const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { firstPartStory, secondPartStory, thirdPartStory, fourthPartStory } =
-    usePresentationSectionData();
+    useTextAndImageSectionData();
   const { aboutIntroduction } = usePageIntroductionSectionsData();
   const { aboutLastContent } = useLastSectionsData();
 
   return (
     <Layout>
-      {aboutLargeImage && (
+      {/* {aboutLargeImage && (
         <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )}
+      )} */}
 
       {aboutIntroduction && (
         <PageIntroduction
@@ -37,33 +40,45 @@ function About() {
 
       {firstPartStory && (
         <ImageAndTextSection
-          image={firstPartStory.presentation_image}
-          title={firstPartStory.presentation_title}
-          paragraph={firstPartStory.presentation_paragraph}
+          title={firstPartStory.text_and_image_title}
+          paragraph={firstPartStory.text_and_image_paragraph}
+          firstImage={firstPartStory.text_and_image_first_image}
+          rowVersion="image-and-text-section___row-reverse-version"
+          backgroundColorVersion="image-and-text-section___green-background-color-version"
+          titleColorVersion="image-and-text-section___title-color-version"
         />
       )}
 
       {secondPartStory && (
         <ImageAndTextSection
-          image={secondPartStory.presentation_image}
-          title={secondPartStory.presentation_title}
-          paragraph={secondPartStory.presentation_paragraph}
+          title={secondPartStory.text_and_image_title}
+          paragraph={secondPartStory.text_and_image_paragraph}
+          firstImage={secondPartStory.text_and_image_first_image}
+          rowVersion="image-and-text-section___row-version"
+          backgroundColorVersion=""
+          titleColorVersion=""
         />
       )}
 
       {thirdPartStory && (
         <ImageAndTextSection
-          image={thirdPartStory.presentation_image}
-          title={thirdPartStory.presentation_title}
-          paragraph={thirdPartStory.presentation_paragraph}
+          title={thirdPartStory.text_and_image_title}
+          paragraph={thirdPartStory.text_and_image_paragraph}
+          firstImage={thirdPartStory.text_and_image_first_image}
+          rowVersion="image-and-text-section___row-reverse-version"
+          backgroundColorVersion="image-and-text-section___green-background-color-version"
+          titleColorVersion="image-and-text-section___title-color-version"
         />
       )}
 
       {fourthPartStory && (
         <ImageAndTextSection
-          image={fourthPartStory.presentation_image}
-          title={fourthPartStory.presentation_title}
-          paragraph={fourthPartStory.presentation_paragraph}
+          title={fourthPartStory.text_and_image_title}
+          paragraph={fourthPartStory.text_and_image_paragraph}
+          firstImage={fourthPartStory.text_and_image_first_image}
+          rowVersion="image-and-text-section___row-version"
+          backgroundColorVersion=""
+          titleColorVersion=""
         />
       )}
 

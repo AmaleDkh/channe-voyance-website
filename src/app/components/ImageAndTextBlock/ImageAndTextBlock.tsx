@@ -27,8 +27,8 @@ function ImageAndTextBlock({
           src={image}
           alt=""
           className="image-and-text-block__image-container__image"
-          width={200}
-          height={200}
+          width={280}
+          height={280}
         />
       </div>
 

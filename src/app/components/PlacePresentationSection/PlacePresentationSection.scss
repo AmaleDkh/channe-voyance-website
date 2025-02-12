@@ -1,0 +1,55 @@
+@import "../../assets/Colors.scss";
+@import "../../assets/Fonts.scss";
+
+.place-presentation-section {
+  margin: 96px 120px 196px 0;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  position: relative;
+  justify-content: space-between;
+
+  &__first-image-container,
+  &__second-image-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    &__first-image-container {
+      position: relative;
+      width: 600px;
+      height: 800px;
+    }
+
+    &__image {
+      object-fit: cover;
+      width: 600px;
+      height: 800px;
+    }
+  }
+
+  &__second-image-container {
+    &__image {
+      position: absolute;
+      width: 400px;
+      height: 600px;
+      top: 280px;
+      left: 418px;
+    }
+  }
+
+  &__questions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 280px;
+    text-align: center;
+
+    &__questions {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

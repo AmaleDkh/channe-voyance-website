@@ -3,10 +3,14 @@
 .page-introduction {
   width: 100%;
   text-align: center;
-  margin-top: 136px;
+  margin-top: 96px;
 
   &__title {
     margin: 0 0 24px 0;
     color: $dark-gold-color;
+  }
+
+  &__subtitle {
+    font-size: 24px;
   }
 }

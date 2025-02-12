@@ -1,12 +1,14 @@
 @import "../../assets/Colors.scss";
 
 .section-with-background-color {
-  background-color: $light-light-gold-color;
-  padding: 136px 120px;
-  margin-bottom: 136px;
+  background-color: $green-color;
+  color: white;
+  padding: 96px 120px;
+  margin-bottom: 96px;
   text-align: center;
 
   &__title {
     margin: 0 0 24px 0;
+    color: white;
   }
 }

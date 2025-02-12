@@ -1,6 +1,10 @@
 @import "./Colors.scss";
 @import "./Fonts.scss";
 
+body {
+  background-color: $beige-color;
+}
+
 * {
   font-family: "Lato";
   font-weight: 300;
@@ -8,21 +12,31 @@
 
 h1,
 h2,
-h3 {
-  // font-family: "Raleway";
+h3,
+h4 {
   font-family: "EB Garamond";
-  font-weight: 500;
 }
 
-h2,
-h3 {
-  color: $dark-gold-color;
+h1 {
+  font-size: 56px;
+  font-style: italic;
 }
 
 h2 {
-  font-size: 32px;
+  color: $dark-gold-color;
+  font-size: 40px;
+  margin-bottom: 56px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 32px;
+  margin: 0 0 56px;
+  font-style: italic;
+}
+
+.button-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 96px;
 }

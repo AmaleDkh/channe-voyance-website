@@ -5,31 +5,60 @@ import Image from "next/image";
 import "./ImageAndTextSection.scss";
 
 interface presentationProps {
-  image: string;
+  firstImage: string;
   title: string;
   paragraph: string;
+  rowVersion: string;
+  backgroundColorVersion: string;
+  titleColorVersion: string;
 }
 
-function ImageAndTextSection({ image, title, paragraph }: presentationProps) {
+function ImageAndTextSection({
+  firstImage,
+  title,
+  paragraph,
+  rowVersion,
+  backgroundColorVersion,
+  titleColorVersion,
+}: presentationProps) {
   return (
-    <section className="image-and-text-section">
+    <section
+      className={`image-and-text-section ${rowVersion} ${backgroundColorVersion}`}
+    >
       <div className="image-and-text-section__text">
-        <h2 className="image-and-text-section__text__title">{title}</h2>
+        <h2
+          className={`image-and-text-section__text__title ${titleColorVersion}`}
+        >
+          {title}
+        </h2>
         <p
           className="image-and-text-section__text__paragraph"
           dangerouslySetInnerHTML={{ __html: paragraph }}
         />
       </div>
 
-      <div className="image-and-text-section__image-container">
+      {
+        // <div className="image-and-text-section__image-container">
         <Image
-          src={image}
+          src={firstImage}
           alt=""
           className="image-and-text-section__image-container__image"
-          width={384}
-          height={384}
+          width={600}
+          height={800}
         />
-      </div>
+        // </div>
+      }
+
+      {/* 
+      <div className="image-and-text-section__image-container">
+        <Image
+          src={firstImage}
+          alt=""
+          className="image-and-text-section__image-container__image"
+          width={600}
+          height={600}
+        />
+      </div> */}
     </section>
   );
 }

@@ -1,0 +1,27 @@
+@import "../../assets/Colors.scss";
+@import "../../assets/Fonts.scss";
+
+.question-and-answer {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &__question {
+    font-weight: 400;
+    width: 400px;
+  }
+
+  &__answer {
+    width: 400px;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.3s ease, height 0.3s ease;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+  }
+}
