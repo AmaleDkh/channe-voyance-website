@@ -11,6 +11,7 @@ import {
   fetchBenefitsSections,
   fetchFaqSections,
   fetchLastSections,
+  fetchBoutiqueSection,
 } from "@/app/utils/api";
 
 type LargeImageContainerSection = {
@@ -99,6 +100,21 @@ type FaqSection = {
   faq_section_image: string;
 };
 
+type BoutiqueSection = {
+  store_first_item_name: string;
+  store_first_item_price: string;
+  store_first_item_image: string;
+  store_second_item_name: string;
+  store_second_item_price: string;
+  store_second_item_image: string;
+  store_third_item_name: string;
+  store_third_item_price: string;
+  store_third_item_image: string;
+  store_fourth_item_name: string;
+  store_fourth_item_price: string;
+  store_fourth_item_image: string;
+};
+
 type lastSection = {
   lastsection_title: string;
   lastsection_paragraph: string;
@@ -149,21 +165,26 @@ export const usePageIntroductionSectionsData = () => {
   const [energyCareIntroduction, setEnergyCareIntroduction] =
     useState<PageIntroductionSection | null>(null);
 
+  const [storeIntroduction, setStoreIntroduction] =
+    useState<PageIntroductionSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const pageIntroductionSectionsList =
           await fetchPageIntroductionSections();
-        const homepageIntroductionData = pageIntroductionSectionsList[3].acf;
-        const readingIntroductionData = pageIntroductionSectionsList[2].acf;
-        const meditationIntroductionData = pageIntroductionSectionsList[1].acf;
-        const energyCareIntroductionData = pageIntroductionSectionsList[0].acf;
+        const homepageIntroductionData = pageIntroductionSectionsList[4].acf;
+        const readingIntroductionData = pageIntroductionSectionsList[3].acf;
+        const meditationIntroductionData = pageIntroductionSectionsList[2].acf;
+        const energyCareIntroductionData = pageIntroductionSectionsList[1].acf;
+        const storeIntroductionData = pageIntroductionSectionsList[0].acf;
 
         if (pageIntroductionSectionsList) {
           setAboutIntroduction(homepageIntroductionData);
           setReadingIntroduction(readingIntroductionData);
           setMeditationIntroduction(meditationIntroductionData);
           setEnergyCareIntroduction(energyCareIntroductionData);
+          setStoreIntroduction(storeIntroductionData);
         }
       } catch (error) {
         console.error(
@@ -180,6 +201,7 @@ export const usePageIntroductionSectionsData = () => {
     readingIntroduction,
     meditationIntroduction,
     energyCareIntroduction,
+    storeIntroduction,
   };
 };
 
@@ -408,6 +430,34 @@ export const useFaqSectionData = () => {
     readingFaqContent,
     meditationFaqContent,
     energyCareFaqContent,
+  };
+};
+
+export const useBoutiqueData = () => {
+  const [boutiqueItemsContent, setBoutiqueItemsContent] =
+    useState<BoutiqueSection | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const boutiqueItemsContentData = await fetchBoutiqueSection();
+        const boutiqueItemsContentSection = boutiqueItemsContentData[0].acf;
+
+        if (boutiqueItemsContentSection) {
+          setBoutiqueItemsContent(boutiqueItemsContentSection);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    boutiqueItemsContent,
   };
 };
 

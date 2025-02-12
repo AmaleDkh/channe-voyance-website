@@ -1,10 +1,30 @@
+"use client";
+
 // Component
-import Layout from "../../components/Layout/Layout";
+import Layout from "@/app/components/Layout/Layout";
+import PageIntroduction from "@/app/components/PageIntroduction/PageIntroduction";
+import StoreList from "@/app/components/StoreList/StoreList";
+import Reviews from "@/app/components/Reviews/Reviews";
+
+// Style
+import "../../assets/Global.scss";
+
+// Custom hooks
+import { usePageIntroductionSectionsData } from "../../../hooks/useData";
 
 function Store() {
+  const { storeIntroduction } = usePageIntroductionSectionsData();
+
   return (
     <Layout>
-      <div>Test</div>
+      {storeIntroduction && (
+        <PageIntroduction
+          title={storeIntroduction.introduction_title}
+          subtitle=""
+        />
+      )}
+      <StoreList />
+      <Reviews />
     </Layout>
   );
 }

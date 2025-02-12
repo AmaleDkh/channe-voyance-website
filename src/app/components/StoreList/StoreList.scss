@@ -1,0 +1,6 @@
+.store-list {
+  margin: 72px 120px 0 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
