@@ -42,12 +42,12 @@
   }
 
   &___row-version {
-    margin: 96px 0 96px 120px;
+    margin: 0 0 0 120px;
   }
 
   &___row-reverse-version {
     flex-direction: row-reverse;
-    margin: 96px 120px 96px 0;
+    margin: 0 120px 0 0;
   }
 
   &__background-color-version {
@@ -63,7 +63,7 @@
 }
 
 .image-and-text-section___beige-background-color-version {
-  background-color: $light-beige-color;
+  background-color: $beige-color;
   padding-right: 120px;
   margin: 0 0 0 0;
 }

@@ -1,12 +1,10 @@
 @import "../../assets/Colors.scss";
 
 .header {
-  // margin: 24px 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  background-color: $light-beige-color;
   padding: 24px 120px;
 
   &__first-block {

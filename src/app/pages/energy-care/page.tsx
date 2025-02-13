@@ -10,6 +10,7 @@ import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
+import PricesSection from "@/app/components/PricesSection/PricesSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -87,6 +88,7 @@ function EnergyCare() {
           secondImage={PlacePresentation.text_and_image_second_image}
         />
       )}
+      <PricesSection />
 
       {energyCareFaqContent && (
         <FrequentlyAskedQuestions

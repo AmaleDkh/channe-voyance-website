@@ -1,0 +1,17 @@
+.practical-information {
+  &__prices {
+    margin: 96px 120px;
+
+    &__blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      &__block {
+        &__title {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.address-and-access {
+  margin: 96px 120px;
+  &__blocks {
+    display: flex;
+    gap: 160px;
+
+    &__item {
+      &__title {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

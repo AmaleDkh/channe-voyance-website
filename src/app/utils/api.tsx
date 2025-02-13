@@ -86,21 +86,21 @@ export const fetchThreeBlockSections = async () => {
 };
 
 // Get all five block sections
-export const fetchFiveBlockSections = async () => {
-  try {
-    const response = await fetch(`${apiUrl}/five_blocks_section`);
+// export const fetchFiveBlockSections = async () => {
+//   try {
+//     const response = await fetch(`${apiUrl}/five_blocks_section`);
 
-    if (!response.ok) {
-      throw new Error("Erreur lors de la requête GET des sections");
-    }
+//     if (!response.ok) {
+//       throw new Error("Erreur lors de la requête GET des sections");
+//     }
 
-    const sections = await response.json();
-    return sections;
-  } catch (error) {
-    console.error("Erreur lors de la récupération des sections", error);
-    throw error;
-  }
-};
+//     const sections = await response.json();
+//     return sections;
+//   } catch (error) {
+//     console.error("Erreur lors de la récupération des sections", error);
+//     throw error;
+//   }
+// };
 
 // Get all benefits sections
 export const fetchBenefitsSections = async () => {
@@ -136,7 +136,7 @@ export const fetchFaqSections = async () => {
   }
 };
 
-// Get all faq sections
+// Get boutique section
 export const fetchBoutiqueSection = async () => {
   try {
     const response = await fetch(`${apiUrl}/boutique`);
@@ -146,6 +146,42 @@ export const fetchBoutiqueSection = async () => {
     }
 
     const sections = await response.json();
+    return sections;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des sections", error);
+    throw error;
+  }
+};
+
+// Get all care prices sections
+export const fetchCarePricesSections = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/prices`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET des sections");
+    }
+
+    const sections = await response.json();
+
+    return sections;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des sections", error);
+    throw error;
+  }
+};
+
+// Get practical information section
+export const fetchPracticalInformationSection = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/info_pratiques`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET des sections");
+    }
+
+    const sections = await response.json();
+
     return sections;
   } catch (error) {
     console.error("Erreur lors de la récupération des sections", error);

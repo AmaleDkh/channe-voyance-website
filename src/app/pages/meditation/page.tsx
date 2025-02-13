@@ -11,6 +11,8 @@ import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import TwoImagesAndTextSection from "@/app/components/TwoImagesAndTextSection/TwoImagesAndTextSection";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
+import PricesBlocks from "@/app/components/PricesBlocks/PricesBlocks";
+import PricesSection from "@/app/components/PricesSection/PricesSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -98,6 +100,8 @@ function Meditation() {
           secondImage={PlacePresentation.text_and_image_second_image}
         />
       )}
+
+      <PricesSection />
 
       {meditationFaqContent && (
         <FrequentlyAskedQuestions

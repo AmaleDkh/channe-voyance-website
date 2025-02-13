@@ -20,7 +20,13 @@ function LargeImageContainer({
 }: LargeImageContainerProps) {
   return (
     <div className="large-image-container">
-      <Image src={image} alt="" className="large-image-container__image" fill />
+      <Image
+        src={image}
+        alt=""
+        className="large-image-container__image"
+        width={800}
+        height={700}
+      />
       <p className="large-image-container__content">
         <h1 className="large-image-container__content__title">{title}</h1>
         <p className="large-image-container__content__paragraph">

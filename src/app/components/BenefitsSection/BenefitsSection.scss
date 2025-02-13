@@ -1,8 +1,8 @@
 @import "../../assets/Colors.scss";
 
 .benefits-section {
-  background-color: $green-color;
-  color: white;
+  background-color: $beige-color;
+
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -30,7 +30,6 @@
     &__title {
       margin: 0 0 56px;
       width: 100%;
-      color: white;
     }
 
     &__paragraph {

@@ -10,6 +10,7 @@ import LastSectionWithButton from "../../components/LastSectionWithButton/LastSe
 import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
+import PricesSection from "@/app/components/PricesSection/PricesSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -87,6 +88,8 @@ function Reading() {
           secondImage={PlacePresentation.text_and_image_second_image}
         />
       )}
+
+      <PricesSection />
 
       {readingFaqContent && (
         <FrequentlyAskedQuestions

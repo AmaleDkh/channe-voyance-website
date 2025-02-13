@@ -6,12 +6,14 @@ import {
   fetchLargeImageContainerSections,
   fetchPageIntroductionSections,
   fetchThreeBlockSections,
-  fetchFiveBlockSections,
+  // fetchFiveBlockSections,
   fetchTextAndImageSections,
   fetchBenefitsSections,
   fetchFaqSections,
   fetchLastSections,
   fetchBoutiqueSection,
+  fetchCarePricesSections,
+  fetchPracticalInformationSection,
 } from "@/app/utils/api";
 
 type LargeImageContainerSection = {
@@ -115,6 +117,27 @@ type BoutiqueSection = {
   store_fourth_item_image: string;
 };
 
+type CarePricesBlocks = {
+  care_information_title: string;
+  first_care_communication: string;
+  first_care_duration: string;
+  first_care_price: string;
+  second_care_communication: string;
+  second_care_duration: string;
+  second_care_price: string;
+  third_care_communication: string;
+  third_care_duration: string;
+  third_care_price: string;
+};
+
+type PracticalInformationSection = {
+  practical_information_image: string;
+  contact: string;
+  opening_hours: string;
+  localisation_address: string;
+  localisation_access: string;
+};
+
 type lastSection = {
   lastsection_title: string;
   lastsection_paragraph: string;
@@ -171,17 +194,24 @@ export const usePageIntroductionSectionsData = () => {
   const [reviewsIntroduction, setReviewsIntroduction] =
     useState<PageIntroductionSection | null>(null);
 
+  const [
+    practicalInformationIntroduction,
+    setPracticalInformationIntroduction,
+  ] = useState<PageIntroductionSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const pageIntroductionSectionsList =
           await fetchPageIntroductionSections();
-        const homepageIntroductionData = pageIntroductionSectionsList[5].acf;
-        const readingIntroductionData = pageIntroductionSectionsList[4].acf;
-        const meditationIntroductionData = pageIntroductionSectionsList[3].acf;
-        const energyCareIntroductionData = pageIntroductionSectionsList[2].acf;
-        const storeIntroductionData = pageIntroductionSectionsList[1].acf;
-        const reviewsIntroductionData = pageIntroductionSectionsList[0].acf;
+        const homepageIntroductionData = pageIntroductionSectionsList[6].acf;
+        const readingIntroductionData = pageIntroductionSectionsList[5].acf;
+        const meditationIntroductionData = pageIntroductionSectionsList[4].acf;
+        const energyCareIntroductionData = pageIntroductionSectionsList[3].acf;
+        const storeIntroductionData = pageIntroductionSectionsList[2].acf;
+        const reviewsIntroductionData = pageIntroductionSectionsList[1].acf;
+        const practicalInformationIntroductionData =
+          pageIntroductionSectionsList[0].acf;
 
         if (pageIntroductionSectionsList) {
           setAboutIntroduction(homepageIntroductionData);
@@ -190,6 +220,9 @@ export const usePageIntroductionSectionsData = () => {
           setEnergyCareIntroduction(energyCareIntroductionData);
           setStoreIntroduction(storeIntroductionData);
           setReviewsIntroduction(reviewsIntroductionData);
+          setPracticalInformationIntroduction(
+            practicalInformationIntroductionData
+          );
         }
       } catch (error) {
         console.error(
@@ -206,6 +239,7 @@ export const usePageIntroductionSectionsData = () => {
     readingIntroduction,
     meditationIntroduction,
     energyCareIntroduction,
+    practicalInformationIntroduction,
     storeIntroduction,
     reviewsIntroduction,
   };
@@ -408,19 +442,24 @@ export const useFaqSectionData = () => {
   const [energyCareFaqContent, setEnergyCareFaqContent] =
     useState<FaqSection | null>(null);
 
+  const [practicalInformationFaqContent, setPracticalInformationFaqContent] =
+    useState<FaqSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const faqSectionsList = await fetchFaqSections();
 
-        const readingFaqContentData = faqSectionsList[2].acf;
-        const meditationFaqContentData = faqSectionsList[1].acf;
-        const energyCareFaqContentData = faqSectionsList[0].acf;
+        const readingFaqContentData = faqSectionsList[3].acf;
+        const meditationFaqContentData = faqSectionsList[2].acf;
+        const energyCareFaqContentData = faqSectionsList[1].acf;
+        const practicalInformationFaqContentData = faqSectionsList[0].acf;
 
         if (faqSectionsList) {
           setReadingFaqContent(readingFaqContentData);
           setMeditationFaqContent(meditationFaqContentData);
           setEnergyCareFaqContent(energyCareFaqContentData);
+          setPracticalInformationFaqContent(practicalInformationFaqContentData);
         }
       } catch (error) {
         console.error(
@@ -436,6 +475,7 @@ export const useFaqSectionData = () => {
     readingFaqContent,
     meditationFaqContent,
     energyCareFaqContent,
+    practicalInformationFaqContent,
   };
 };
 
@@ -464,6 +504,77 @@ export const useBoutiqueData = () => {
 
   return {
     boutiqueItemsContent,
+  };
+};
+
+export const useCarePricesBlocksData = () => {
+  const [readingCarePricesContent, setReadingCarePricesContent] =
+    useState<CarePricesBlocks | null>(null);
+
+  const [meditationCarePricesContent, setMeditationCarePricesContent] =
+    useState<CarePricesBlocks | null>(null);
+
+  const [energyCarePricesContent, setEnergyCarePricesContent] =
+    useState<CarePricesBlocks | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const carePricesBlockssList = await fetchCarePricesSections();
+
+        const meditationCarePricesData = carePricesBlockssList[2].acf;
+        const energyCarePricesData = carePricesBlockssList[1].acf;
+        const readingCarePricesData = carePricesBlockssList[0].acf;
+
+        if (carePricesBlockssList) {
+          setMeditationCarePricesContent(meditationCarePricesData);
+          setEnergyCarePricesContent(energyCarePricesData);
+          setReadingCarePricesContent(readingCarePricesData);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    readingCarePricesContent,
+    meditationCarePricesContent,
+    energyCarePricesContent,
+  };
+};
+
+export const usePracticalInformationData = () => {
+  const [practicalInformationContent, setPracticalInformationContent] =
+    useState<PracticalInformationSection | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const practicalInformationContentData =
+          await fetchPracticalInformationSection();
+        const practicalInformationContentSection =
+          practicalInformationContentData[0].acf;
+
+        if (practicalInformationContentData) {
+          setPracticalInformationContent(practicalInformationContentSection);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    practicalInformationContent,
   };
 };
 

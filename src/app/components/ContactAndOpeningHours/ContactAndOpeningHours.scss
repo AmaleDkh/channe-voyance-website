@@ -1,0 +1,22 @@
+@import "../../assets/Colors.scss";
+
+.contact-and-opening-hours {
+  background-color: $beige-color;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+  &__texts {
+    &__blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      &__item {
+        &__title {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}

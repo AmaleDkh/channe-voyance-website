@@ -1,13 +1,11 @@
 @import "../../assets/Colors.scss";
 
 .page-introduction {
-  width: 100%;
   text-align: center;
-  margin-top: 96px;
+  margin: 96px 120px;
 
   &__title {
     margin: 0 0 24px 0;
-    color: $dark-gold-color;
   }
 
   &__subtitle {

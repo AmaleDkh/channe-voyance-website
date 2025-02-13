@@ -57,7 +57,7 @@ function FrequentlyAskedQuestions({
     <section className="frequently-asked-questions-section">
       <div className="frequently-asked-questions-section__questions-container">
         <h2 className="frequently-asked-questions-section__questions-container__title">
-          Vos questions sur la voyance
+          Questions fréquentes
         </h2>
         <div className="frequently-asked-questions-section__questions-container__questions">
           <QuestionAndAnswer question={question1} answer={answer1} />

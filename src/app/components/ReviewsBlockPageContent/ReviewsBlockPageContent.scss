@@ -14,11 +14,16 @@
     }
 
     &__content {
-      background-color: $dark-beige-color;
+      background-color: $green-color;
       padding: 40px;
+
+      &__review {
+        color: white;
+      }
+
       &__name {
         margin: 24px 0 0 0;
-        color: black;
+        color: white;
         font-size: 24px;
       }
     }

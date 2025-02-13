@@ -2,7 +2,7 @@
 @import "./Fonts.scss";
 
 body {
-  background-color: $beige-color;
+  background-color: $light-beige-color;
 }
 
 * {
@@ -20,18 +20,19 @@ h4 {
 h1 {
   font-size: 56px;
   font-style: italic;
+  color: $gold-color;
 }
 
 h2 {
-  color: $dark-gold-color;
+  color: $gold-color;
   font-size: 40px;
   margin-bottom: 56px;
 }
 
 h3 {
   font-size: 32px;
-  margin: 0 0 56px;
   font-style: italic;
+  color: $green-color;
 }
 
 .button-block {

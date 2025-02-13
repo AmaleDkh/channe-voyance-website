@@ -1,6 +1,6 @@
 "use client";
 
-// Component
+// Components
 import Layout from "@/app/components/Layout/Layout";
 import PageIntroduction from "@/app/components/PageIntroduction/PageIntroduction";
 import StoreList from "@/app/components/StoreList/StoreList";

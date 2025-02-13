@@ -1,0 +1,42 @@
+@import "../../assets/Colors.scss";
+
+.reading-price {
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    margin: auto;
+
+    &__first-item {
+      background-color: $beige-color;
+      border-radius: 8px;
+      padding: 40px;
+      flex: 2;
+
+      &__title {
+        margin-bottom: 24px;
+      }
+
+      &__duration {
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+    }
+
+    &__second-item {
+      background-color: $beige-color;
+      border-radius: 8px;
+      padding: 40px;
+      flex: 1;
+
+      &__title {
+        margin-bottom: 24px;
+      }
+
+      &__duration {
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+    }
+  }
+}
