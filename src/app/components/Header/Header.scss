@@ -1,14 +1,32 @@
 @import "../../assets/Colors.scss";
+@import "../../assets/Fonts.scss";
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 24px 120px;
+  padding: 24px 104px;
 
   &__first-block {
     display: flex;
     align-items: center;
+    width: 100%;
+    position: relative;
+
+    &__name-and-profession {
+      text-align: center;
+      color: $dark-gold-color;
+
+      &__first-and-last-name {
+        font-size: 40px;
+        font-family: "EB Garamond";
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 0;
   }
 }

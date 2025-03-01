@@ -115,16 +115,25 @@ type BoutiqueSection = {
   store_fourth_item_name: string;
   store_fourth_item_price: string;
   store_fourth_item_image: string;
+  store_fifth_item_name: string;
+  store_fifth_item_price: string;
+  store_fifth_item_image: string;
+  store_sixth_item_name: string;
+  store_sixth_item_price: string;
+  store_sixth_item_image: string;
 };
 
 type CarePricesBlocks = {
   care_information_title: string;
+  first_care_image: string;
   first_care_communication: string;
   first_care_duration: string;
   first_care_price: string;
+  second_care_image: string;
   second_care_communication: string;
   second_care_duration: string;
   second_care_price: string;
+  third_care_image: string;
   third_care_communication: string;
   third_care_duration: string;
   third_care_price: string;
@@ -135,7 +144,9 @@ type PracticalInformationSection = {
   contact: string;
   opening_hours: string;
   localisation_address: string;
-  localisation_access: string;
+  localisation_first_access: string;
+  localisation_second_access: string;
+  localisation_third_access: string;
 };
 
 type lastSection = {
@@ -147,20 +158,20 @@ export const useLargeImageContainerSectionsData = () => {
   const [homepageLargeImage, setHomepageLargeImage] =
     useState<LargeImageContainerSection | null>(null);
 
-  const [aboutLargeImage, setAboutLargeImage] =
-    useState<LargeImageContainerSection | null>(null);
+  // const [aboutLargeImage, setAboutLargeImage] =
+  //   useState<LargeImageContainerSection | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const largeImageContainerSectionsList =
           await fetchLargeImageContainerSections();
-        const homepageLargeImageData = largeImageContainerSectionsList[1].acf;
-        const aboutLargeImageData = largeImageContainerSectionsList[0].acf;
+        const homepageLargeImageData = largeImageContainerSectionsList[0].acf;
+        // const aboutLargeImageData = largeImageContainerSectionsList[0].acf;
 
         if (largeImageContainerSectionsList) {
           setHomepageLargeImage(homepageLargeImageData);
-          setAboutLargeImage(aboutLargeImageData);
+          // setAboutLargeImage(aboutLargeImageData);
         }
       } catch (error) {
         console.error(
@@ -172,7 +183,7 @@ export const useLargeImageContainerSectionsData = () => {
     fetchData();
   }, []);
 
-  return { homepageLargeImage, aboutLargeImage };
+  return { homepageLargeImage };
 };
 
 export const usePageIntroductionSectionsData = () => {
@@ -267,18 +278,30 @@ export const useTextAndImageSectionData = () => {
   const [PlacePresentation, setPlacePresentation] =
     useState<imageAndTextSection | null>(null);
 
+  const [readingInterests, setReadingInterests] =
+    useState<imageAndTextSection | null>(null);
+
+  const [meditationInterests, setMeditationInterests] =
+    useState<imageAndTextSection | null>(null);
+
+  const [energyCareInterests, setEnergyCareInterests] =
+    useState<imageAndTextSection | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const textAndImageSectionsList = await fetchTextAndImageSections();
 
-        const presentationContentData = textAndImageSectionsList[6].acf;
-        const firstPartStoryContentData = textAndImageSectionsList[5].acf;
-        const secondPartStoryContentData = textAndImageSectionsList[4].acf;
-        const thirdPartStoryContentData = textAndImageSectionsList[3].acf;
-        const fourthPartStoryContentData = textAndImageSectionsList[2].acf;
-        const meditationPageSelfPracticeData = textAndImageSectionsList[1].acf;
-        const PlacePresentationData = textAndImageSectionsList[0].acf;
+        const presentationContentData = textAndImageSectionsList[9].acf;
+        const firstPartStoryContentData = textAndImageSectionsList[8].acf;
+        const secondPartStoryContentData = textAndImageSectionsList[7].acf;
+        const thirdPartStoryContentData = textAndImageSectionsList[6].acf;
+        const fourthPartStoryContentData = textAndImageSectionsList[5].acf;
+        const meditationPageSelfPracticeData = textAndImageSectionsList[4].acf;
+        const PlacePresentationData = textAndImageSectionsList[3].acf;
+        const readingInterestsData = textAndImageSectionsList[2].acf;
+        const meditationInterestsData = textAndImageSectionsList[1].acf;
+        const energyCareInterestsData = textAndImageSectionsList[0].acf;
 
         if (textAndImageSectionsList) {
           setPresentationContent(presentationContentData);
@@ -288,6 +311,9 @@ export const useTextAndImageSectionData = () => {
           setFourthPartStory(fourthPartStoryContentData);
           setMeditationPageSelfPractice(meditationPageSelfPracticeData);
           setPlacePresentation(PlacePresentationData);
+          setReadingInterests(readingInterestsData);
+          setMeditationInterests(meditationInterestsData);
+          setEnergyCareInterests(energyCareInterestsData);
         }
       } catch (error) {
         console.error(
@@ -307,6 +333,9 @@ export const useTextAndImageSectionData = () => {
     fourthPartStory,
     meditationPageSelfPractice,
     PlacePresentation,
+    readingInterests,
+    meditationInterests,
+    energyCareInterests,
   };
 };
 

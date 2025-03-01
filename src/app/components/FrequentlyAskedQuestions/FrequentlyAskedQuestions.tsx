@@ -1,5 +1,8 @@
 "use client";
 
+// Next element
+import { usePathname } from "next/navigation";
+
 // Component
 import QuestionAndAnswer from "../QuestionAndAnswer/QuestionAndAnswer";
 
@@ -53,6 +56,8 @@ function FrequentlyAskedQuestions({
   answer10,
   image,
 }: FaqsSectionProps) {
+  const pathname = usePathname();
+
   return (
     <section className="frequently-asked-questions-section">
       <div className="frequently-asked-questions-section__questions-container">
@@ -65,11 +70,17 @@ function FrequentlyAskedQuestions({
           <QuestionAndAnswer question={question3} answer={answer3} />
           <QuestionAndAnswer question={question4} answer={answer4} />
           <QuestionAndAnswer question={question5} answer={answer5} />
-          <QuestionAndAnswer question={question6} answer={answer6} />
-          <QuestionAndAnswer question={question7} answer={answer7} />
-          <QuestionAndAnswer question={question8} answer={answer8} />
-          <QuestionAndAnswer question={question9} answer={answer9} />
-          <QuestionAndAnswer question={question10} answer={answer10} />
+          {pathname === "/pages/practical-information" ? (
+            ""
+          ) : (
+            <>
+              <QuestionAndAnswer question={question6} answer={answer6} />
+              <QuestionAndAnswer question={question7} answer={answer7} />
+              <QuestionAndAnswer question={question8} answer={answer8} />
+              <QuestionAndAnswer question={question9} answer={answer9} />
+              <QuestionAndAnswer question={question10} answer={answer10} />
+            </>
+          )}
         </div>
       </div>
     </section>

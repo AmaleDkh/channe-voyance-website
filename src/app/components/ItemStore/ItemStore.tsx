@@ -16,7 +16,7 @@ function ItemStore({ image, name, price }: itemStoreProps) {
       <Image
         src={image}
         alt=""
-        className="image-and-text-block__image-container__image"
+        className="item-store__image"
         width={400}
         height={400}
       />

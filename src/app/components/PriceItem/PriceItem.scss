@@ -1,17 +1,21 @@
 @import "../../assets/Colors.scss";
 
 .price-item {
-  background-color: $beige-color;
   border-radius: 8px;
-  padding: 40px;
+
   flex: 1;
 
-  &__title {
-    margin-bottom: 24px;
-  }
+  &__block {
+    background-color: $beige-color;
+    padding: 24px;
 
-  &__duration {
-    margin-bottom: 8px;
-    font-weight: 500;
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__duration {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
   }
 }

@@ -1,5 +1,5 @@
 .address-and-access {
-  margin: 96px 120px;
+  margin: 96px 104px;
   &__blocks {
     display: flex;
     gap: 160px;
@@ -7,6 +7,11 @@
     &__item {
       &__title {
         margin-bottom: 24px;
+      }
+
+      &__first-paragraph,
+      &__second-paragraph {
+        margin-bottom: 8px;
       }
     }
   }

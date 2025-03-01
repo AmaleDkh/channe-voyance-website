@@ -25,7 +25,7 @@ h1 {
 
 h2 {
   color: $gold-color;
-  font-size: 40px;
+  font-size: 48px;
   margin-bottom: 56px;
 }
 
@@ -40,4 +40,9 @@ h3 {
   display: flex;
   justify-content: center;
   margin-bottom: 96px;
+}
+
+.store-page__title {
+  margin-top: 96px;
+  text-align: center;
 }

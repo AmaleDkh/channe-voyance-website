@@ -1,6 +1,14 @@
 .store-list {
-  margin: 72px 120px 0 120px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
+  margin: 72px 104px 96px 104px;
+
+  &__items-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    column-gap: 80px;
+  }
+
+  &__paragraph {
+    text-align: center;
+  }
 }

@@ -7,6 +7,9 @@ import ContactAndOpeningHours from "@/app/components/ContactAndOpeningHours/Cont
 import AddressAndAccess from "@/app/components/AddressAndAccess/AddressAndAccess";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import PricesBlocks from "@/app/components/PricesBlocks/PricesBlocks";
+import ReadingPricesBlocks from "@/app/components/ReadingPricesBlocks/ReadingPricesBlocks";
+import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSectionWithButton";
+import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 
 // Style
 import "../../assets/Global.scss";
@@ -18,8 +21,9 @@ import {
   usePracticalInformationData,
   useFaqSectionData,
   useCarePricesBlocksData,
+  useLastSectionsData,
+  useTextAndImageSectionData,
 } from "../../../hooks/useData";
-import ReadingPricesBlocks from "@/app/components/ReadingPricesBlocks/ReadingPricesBlocks";
 
 function PracticalInformation() {
   const { practicalInformationIntroduction } =
@@ -28,6 +32,8 @@ function PracticalInformation() {
   const { practicalInformationFaqContent } = useFaqSectionData();
   const { readingCarePricesContent } = useCarePricesBlocksData();
   const { meditationCarePricesContent } = useCarePricesBlocksData();
+  const { homepageLastContent } = useLastSectionsData();
+  const { PlacePresentation } = useTextAndImageSectionData();
 
   return (
     <Layout>
@@ -49,7 +55,15 @@ function PracticalInformation() {
       {practicalInformationContent && (
         <AddressAndAccess
           localisationAddress={practicalInformationContent.localisation_address}
-          localisationAccess={practicalInformationContent.localisation_access}
+          localisationFirstAccess={
+            practicalInformationContent.localisation_first_access
+          }
+          localisationSecondAccess={
+            practicalInformationContent.localisation_second_access
+          }
+          localisationThirdAccess={
+            practicalInformationContent.localisation_third_access
+          }
         />
       )}
 
@@ -63,11 +77,13 @@ function PracticalInformation() {
             </h3>
             {readingCarePricesContent && (
               <ReadingPricesBlocks
+                firstItemImage={readingCarePricesContent.first_care_image}
                 firstItemTitle={
                   readingCarePricesContent.first_care_communication
                 }
                 firstItemDuration={readingCarePricesContent.first_care_duration}
                 firstItemPrice={readingCarePricesContent.first_care_price}
+                secondItemImage={readingCarePricesContent.second_care_image}
                 secondItemTitle={
                   readingCarePricesContent.second_care_communication
                 }
@@ -86,6 +102,7 @@ function PracticalInformation() {
 
             {meditationCarePricesContent && (
               <PricesBlocks
+                firstImage={meditationCarePricesContent.first_care_image}
                 firstTitle={
                   meditationCarePricesContent.first_care_communication
                 }
@@ -94,10 +111,12 @@ function PracticalInformation() {
                 secondTitle={
                   meditationCarePricesContent.second_care_communication
                 }
+                secondImage={meditationCarePricesContent.second_care_image}
                 secondDuration={
                   meditationCarePricesContent.second_care_duration
                 }
                 secondPrice={meditationCarePricesContent.second_care_price}
+                thirdImage={meditationCarePricesContent.third_care_image}
                 thirdTitle={
                   meditationCarePricesContent.third_care_communication
                 }
@@ -132,6 +151,23 @@ function PracticalInformation() {
           question10={practicalInformationFaqContent.faq_section_question10}
           answer10={practicalInformationFaqContent.faq_section_answer10}
           image={practicalInformationFaqContent.faq_section_image}
+        />
+      )}
+
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
+      {homepageLastContent && (
+        <LastSectionWithButton
+          title={homepageLastContent.lastsection_title}
+          paragraph={homepageLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop=""
         />
       )}
     </Layout>

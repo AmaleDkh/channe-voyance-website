@@ -2,24 +2,22 @@
 
 // Components
 import Layout from "../../components/Layout/Layout";
-import LargeImageContainer from "../../components/LargeImageContainer/LargeImageContainer";
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ThreeBlocksSection from "../../components/ThreeBlocksSection/ThreeBlocksSection";
 import Reviews from "../../components/Reviews/Reviews";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
 import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import TwoImagesAndTextSection from "@/app/components/TwoImagesAndTextSection/TwoImagesAndTextSection";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
-import PricesBlocks from "@/app/components/PricesBlocks/PricesBlocks";
 import PricesSection from "@/app/components/PricesSection/PricesSection";
+import SelfPractice from "@/app/components/SelfPractice/SelfPractice";
+import InterestsSection from "@/app/components/InterestsSection/InterestsSection";
 
 // Style
 import "../../assets/Global.scss";
 
 // Custom hooks
 import {
-  useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   useThreeblocksSectionData,
   useBenefitsSectionData,
@@ -29,21 +27,17 @@ import {
 } from "../../../hooks/useData";
 
 function Meditation() {
-  const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { meditationIntroduction } = usePageIntroductionSectionsData();
   const { meditationAdvantagesContent } = useThreeblocksSectionData();
   const { meditationLastContent } = useLastSectionsData();
   const { meditationBenefitsContent } = useBenefitsSectionData();
   const { meditationFaqContent } = useFaqSectionData();
   const { meditationPageSelfPractice } = useTextAndImageSectionData();
-  const { PlacePresentation } = useTextAndImageSectionData();
+  const { PlacePresentation, meditationInterests } =
+    useTextAndImageSectionData();
 
   return (
     <Layout>
-      {/* {aboutLargeImage && (
-        <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )} */}
-
       {meditationIntroduction && (
         <PageIntroduction
           title={meditationIntroduction.introduction_title}
@@ -64,6 +58,14 @@ function Meditation() {
         />
       )}
 
+      {meditationInterests && (
+        <InterestsSection
+          image={meditationInterests.text_and_image_first_image}
+          title={meditationInterests.text_and_image_title}
+          paragraph={meditationInterests.text_and_image_paragraph}
+        />
+      )}
+
       {meditationAdvantagesContent && (
         <ThreeBlocksSection
           sectionTitle={meditationAdvantagesContent.section_title}
@@ -78,11 +80,15 @@ function Meditation() {
           title3={meditationAdvantagesContent.bloc_3_titre}
           paragraph3={meditationAdvantagesContent.bloc_3_paragraph}
           flexVersion=""
+          withButton={false}
+          firstButtonLink=""
+          secondButtonLink=""
+          thirdbButtonLink=""
         />
       )}
 
       {meditationPageSelfPractice && (
-        <TwoImagesAndTextSection
+        <SelfPractice
           title={meditationPageSelfPractice.text_and_image_title}
           paragraph={meditationPageSelfPractice.text_and_image_paragraph}
           firstImage={meditationPageSelfPractice.text_and_image_first_image}
@@ -91,15 +97,6 @@ function Meditation() {
       )}
 
       <Reviews />
-
-      {PlacePresentation && (
-        <PlacePresentationSection
-          title={PlacePresentation.text_and_image_title}
-          paragraph={PlacePresentation.text_and_image_paragraph}
-          firstImage={PlacePresentation.text_and_image_first_image}
-          secondImage={PlacePresentation.text_and_image_second_image}
-        />
-      )}
 
       <PricesSection />
 
@@ -129,10 +126,20 @@ function Meditation() {
         />
       )}
 
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
       {meditationLastContent && (
         <LastSectionWithButton
           title={meditationLastContent.lastsection_title}
           paragraph={meditationLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop=""
         />
       )}
     </Layout>

@@ -5,24 +5,13 @@
   margin: 96px 0 0 0;
   width: 100%;
 
-  &__image-container {
-    height: 400px;
-
-    &__image {
-      object-fit: cover;
-      position: absolute;
-      left: 0;
-      bottom: 30px;
-      height: 800px;
-    }
-  }
-
   &__questions-container {
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    padding-right: 120px;
-    padding: 96px 120px 96px 120px;
+    padding-right: 104px;
+    padding: 96px 104px;
     background-color: $green-color;
     color: white;
 
@@ -31,9 +20,10 @@
     }
 
     &__questions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 40px;
+      width: 800px;
     }
   }
 }

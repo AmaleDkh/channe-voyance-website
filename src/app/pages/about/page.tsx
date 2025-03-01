@@ -2,7 +2,6 @@
 
 // Components
 import Layout from "../../components/Layout/Layout";
-import LargeImageContainer from "../../components/LargeImageContainer/LargeImageContainer";
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ImageAndTextSection from "../../components/ImageAndTextSection/ImageAndTextSection";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
@@ -12,14 +11,12 @@ import "../../assets/Global.scss";
 
 // Custom hooks
 import {
-  useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   useTextAndImageSectionData,
   useLastSectionsData,
 } from "../../../hooks/useData";
 
 function About() {
-  const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { firstPartStory, secondPartStory, thirdPartStory, fourthPartStory } =
     useTextAndImageSectionData();
   const { aboutIntroduction } = usePageIntroductionSectionsData();
@@ -27,10 +24,6 @@ function About() {
 
   return (
     <Layout>
-      {/* {aboutLargeImage && (
-        <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )} */}
-
       {aboutIntroduction && (
         <PageIntroduction
           title={aboutIntroduction.introduction_title}
@@ -86,6 +79,7 @@ function About() {
         <LastSectionWithButton
           title={aboutLastContent.lastsection_title}
           paragraph={aboutLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop="last-section-with-button__with-margin-top"
         />
       )}
     </Layout>

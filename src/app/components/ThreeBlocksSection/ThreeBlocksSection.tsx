@@ -20,6 +20,10 @@ interface ThreeBlocksSectionProps {
   title3: string;
   paragraph3: string;
   flexVersion: string;
+  withButton: boolean;
+  firstButtonLink: string;
+  secondButtonLink: string;
+  thirdbButtonLink: string;
 }
 
 function ThreeBlocksSection({
@@ -35,6 +39,10 @@ function ThreeBlocksSection({
   title3,
   paragraph3,
   flexVersion,
+  withButton,
+  firstButtonLink,
+  secondButtonLink,
+  thirdbButtonLink,
 }: ThreeBlocksSectionProps) {
   const pathname = usePathname();
 
@@ -56,6 +64,8 @@ function ThreeBlocksSection({
               ? "row-version"
               : ""
           }
+          withButton={withButton}
+          buttonLink={firstButtonLink}
         />
 
         <ImageAndTextBlock
@@ -67,6 +77,8 @@ function ThreeBlocksSection({
               ? "row-version"
               : ""
           }
+          withButton={withButton}
+          buttonLink={secondButtonLink}
         />
 
         <ImageAndTextBlock
@@ -78,6 +90,8 @@ function ThreeBlocksSection({
               ? "row-version"
               : ""
           }
+          withButton={withButton}
+          buttonLink={thirdbButtonLink}
         />
       </div>
     </section>

@@ -21,31 +21,29 @@ function PlacePresentationSection({
 }: placePresentationProps) {
   return (
     <section className="place-presentation-section">
-      <div className="place-presentation-section__first-image-container">
+      <div className="place-presentation-section__texts">
+        <h2 className="place-presentation-section__texts__title">{title}</h2>
+        <div className="place-presentation-section__texts__paragraph">
+          {paragraph}
+        </div>
+      </div>
+
+      <div className="place-presentation-section__images-block">
         <Image
           src={firstImage}
           alt=""
-          className="place-presentation-section__first-image-container__image"
-          width={600}
-          height={600}
+          className="place-presentation-section__images-block__image"
+          width={400}
+          height={500}
         />
 
         <Image
           src={secondImage}
           alt=""
-          className="place-presentation-section__second-image-container__image"
-          width={864}
-          height={864}
+          className="place-presentation-section__images-block__image"
+          width={400}
+          height={500}
         />
-      </div>
-
-      <div className="place-presentation-section__questions-container">
-        <h2 className="place-presentation-section__questions-container__title">
-          {title}
-        </h2>
-        <div className="place-presentation-section__questions-container__questions">
-          {paragraph}
-        </div>
       </div>
     </section>
   );

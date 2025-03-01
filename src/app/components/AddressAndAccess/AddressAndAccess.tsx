@@ -3,12 +3,16 @@ import "./AddressAndAccess.scss";
 
 interface AddressAndAccessProps {
   localisationAddress: string;
-  localisationAccess: string;
+  localisationFirstAccess: string;
+  localisationSecondAccess: string;
+  localisationThirdAccess: string;
 }
 
 function AddressAndAccess({
   localisationAddress,
-  localisationAccess,
+  localisationFirstAccess,
+  localisationSecondAccess,
+  localisationThirdAccess,
 }: AddressAndAccessProps) {
   return (
     <section className="address-and-access">
@@ -21,7 +25,13 @@ function AddressAndAccess({
 
         <div className="address-and-access__blocks__item">
           <h3 className="address-and-access__blocks__item__title">Accès</h3>
-          <p>{localisationAccess}</p>
+          <p className="address-and-access__blocks__item__first-paragraph">
+            {localisationFirstAccess}
+          </p>
+          <p className="address-and-access__blocks__item__second-paragraph">
+            {localisationSecondAccess}
+          </p>
+          <p>{localisationThirdAccess}</p>
         </div>
       </div>
     </section>

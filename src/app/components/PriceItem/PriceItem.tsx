@@ -1,18 +1,31 @@
+// Next element
+import Image from "next/image";
+
 // Style
 import "./PriceItem.scss";
 
 interface priceItemProps {
+  image: string;
   title: string;
   duration: string;
   price: string;
 }
 
-function PriceItem({ title, duration, price }: priceItemProps) {
+function PriceItem({ image, title, duration, price }: priceItemProps) {
   return (
     <div className="price-item">
-      <h3 className="price-item__title">{title}</h3>
-      <p className="price-item__duration">{duration}</p>
-      <p>{price}</p>
+      <Image
+        src={image}
+        alt=""
+        className="item-store__image"
+        width={400}
+        height={400}
+      />
+      <div className="price-item__block">
+        <h3 className="price-item__block__title">{title}</h3>
+        <p className="price-item__block__duration">{duration}</p>
+        <p>{price}</p>
+      </div>
     </div>
   );
 }

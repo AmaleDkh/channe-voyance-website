@@ -1,11 +1,11 @@
 // Next element
 import Image from "next/image";
 
-// Style
-import "./LargeImageContainer.scss";
-
 // Component
 import Button from "../Button/Button";
+
+// Style
+import "./LargeImageContainer.scss";
 
 type LargeImageContainerProps = {
   image: string;
@@ -32,7 +32,11 @@ function LargeImageContainer({
         <p className="large-image-container__content__paragraph">
           {introduction}
         </p>
-        <Button text="Commencez votre chemin vers l'équilibre" />
+        <Button
+          text="Commencez dès aujourd'hui votre chemin vers l'équilibre"
+          link=""
+          buttonWithMarginAuto=""
+        />
       </p>
     </div>
   );

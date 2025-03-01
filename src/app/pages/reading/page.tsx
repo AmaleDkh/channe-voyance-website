@@ -2,7 +2,6 @@
 
 // Components
 import Layout from "../../components/Layout/Layout";
-import LargeImageContainer from "../../components/LargeImageContainer/LargeImageContainer";
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ThreeBlocksSection from "../../components/ThreeBlocksSection/ThreeBlocksSection";
 import Reviews from "../../components/Reviews/Reviews";
@@ -11,13 +10,13 @@ import BenefitsSection from "@/app/components/BenefitsSection/BenefitsSection";
 import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 import PricesSection from "@/app/components/PricesSection/PricesSection";
+import InterestsSection from "@/app/components/InterestsSection/InterestsSection";
 
 // Style
 import "../../assets/Global.scss";
 
 // Custom hooks
 import {
-  useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   useBenefitsSectionData,
   useThreeblocksSectionData,
@@ -27,20 +26,15 @@ import {
 } from "../../../hooks/useData";
 
 function Reading() {
-  const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { readingIntroduction } = usePageIntroductionSectionsData();
   const { readingAdvantagesContent } = useThreeblocksSectionData();
   const { readingLastContent } = useLastSectionsData();
   const { readingBenefitsContent } = useBenefitsSectionData();
   const { readingFaqContent } = useFaqSectionData();
-  const { PlacePresentation } = useTextAndImageSectionData();
+  const { PlacePresentation, readingInterests } = useTextAndImageSectionData();
 
   return (
     <Layout>
-      {/* {aboutLargeImage && (
-        <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )} */}
-
       {readingIntroduction && (
         <PageIntroduction
           title={readingIntroduction.introduction_title}
@@ -61,6 +55,14 @@ function Reading() {
         />
       )}
 
+      {readingInterests && (
+        <InterestsSection
+          image={readingInterests.text_and_image_first_image}
+          title={readingInterests.text_and_image_title}
+          paragraph={readingInterests.text_and_image_paragraph}
+        />
+      )}
+
       {readingAdvantagesContent && (
         <ThreeBlocksSection
           sectionTitle={readingAdvantagesContent.section_title}
@@ -74,20 +76,15 @@ function Reading() {
           image3={readingAdvantagesContent.bloc_3_image}
           title3={readingAdvantagesContent.bloc_3_titre}
           paragraph3={readingAdvantagesContent.bloc_3_paragraph}
+          withButton={false}
+          firstButtonLink=""
+          secondButtonLink=""
+          thirdbButtonLink=""
           flexVersion=""
         />
       )}
 
       <Reviews />
-
-      {PlacePresentation && (
-        <PlacePresentationSection
-          title={PlacePresentation.text_and_image_title}
-          paragraph={PlacePresentation.text_and_image_paragraph}
-          firstImage={PlacePresentation.text_and_image_first_image}
-          secondImage={PlacePresentation.text_and_image_second_image}
-        />
-      )}
 
       <PricesSection />
 
@@ -117,10 +114,20 @@ function Reading() {
         />
       )}
 
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
       {readingLastContent && (
         <LastSectionWithButton
           title={readingLastContent.lastsection_title}
           paragraph={readingLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop=""
         />
       )}
     </Layout>

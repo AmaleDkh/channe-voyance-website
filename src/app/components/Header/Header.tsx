@@ -12,14 +12,24 @@ function Header() {
   return (
     <header className="header">
       <div className="header__first-block">
-        <Image
+        {/* <Image
           src=""
           alt="Test"
           className="header__first-block__logo"
           width={80}
           height={80}
-        />
-        <Button text="PRENDRE RENDEZ-VOUS" />
+        /> */}
+        <div className="header__first-block__name-and-profession">
+          <div className="header__first-block__name-and-profession__first-and-last-name">
+            Channe Len
+          </div>
+          <div className="header__first-block__name-and-profession__profession">
+            Voyante
+          </div>
+        </div>
+        <div className="header__button">
+          <Button text="PRENDRE RENDEZ-VOUS" link="" buttonWithMarginAuto="" />
+        </div>
       </div>
 
       <NavigationMenu />

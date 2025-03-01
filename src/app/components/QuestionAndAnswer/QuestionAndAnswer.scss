@@ -5,23 +5,24 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  max-width: 800px;
 
   &__question {
-    font-weight: 400;
-    width: 400px;
+    font-weight: 500;
   }
 
   &__answer {
-    width: 400px;
-    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
-    height: 0;
-    transition: opacity 0.3s ease, height 0.3s ease;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
 
     &--open {
-      visibility: visible;
       opacity: 1;
-      height: auto;
+      max-height: 1000px;
+      transition: opacity 0.5s ease, max-height 0.5s ease;
+      width: fit-content;
+      margin-top: 16px;
     }
   }
 }

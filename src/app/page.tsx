@@ -7,6 +7,8 @@ import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSe
 import ThreeBlocksSection from "./components/ThreeBlocksSection/ThreeBlocksSection";
 import SectionWithBackgroundColor from "./components/SectionWithBackgroundColor/SectionWithBackgroundColor";
 import Reviews from "./components/Reviews/Reviews";
+import Button from "./components/Button/Button";
+import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 import LastSectionWithButton from "./components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
@@ -19,12 +21,12 @@ import {
   useThreeblocksSectionData,
   useLastSectionsData,
 } from "../hooks/useData";
-import Button from "./components/Button/Button";
 
 export default function Home() {
   const { homepageLargeImage } = useLargeImageContainerSectionsData();
   const { presentationContent } = useTextAndImageSectionData();
   const { advantagesContent, servicesContent } = useThreeblocksSectionData();
+  const { PlacePresentation } = useTextAndImageSectionData();
   const { homepageLastContent } = useLastSectionsData();
 
   return (
@@ -62,8 +64,19 @@ export default function Home() {
           title3={advantagesContent.bloc_3_titre}
           paragraph3={advantagesContent.bloc_3_paragraph}
           flexVersion=""
+          withButton={false}
+          firstButtonLink=""
+          secondButtonLink=""
+          thirdbButtonLink=""
         />
       )}
+
+      {/* <div className="button-block">
+        <Button
+          text="Tout savoir sur les approches proposées"
+          link="/pages/services"
+        />
+      </div> */}
 
       <SectionWithBackgroundColor />
 
@@ -76,24 +89,34 @@ export default function Home() {
           paragraph1={servicesContent.bloc_1_paragraph}
           image2={servicesContent.bloc_2_image}
           title2={servicesContent.bloc_2_titre}
-          paragraph2={servicesContent.bloc_3_paragraph}
+          paragraph2={servicesContent.bloc_2_paragraph}
           image3={servicesContent.bloc_3_image}
           title3={servicesContent.bloc_3_titre}
           paragraph3={servicesContent.bloc_3_paragraph}
           flexVersion=""
+          withButton={true}
+          firstButtonLink="/pages/reading"
+          secondButtonLink="/pages/meditation"
+          thirdbButtonLink="/pages/energy-care"
         />
       )}
 
-      <div className="button-block">
-        <Button text="Tout savoir sur les approches proposées" />
-      </div>
-
       <Reviews />
+
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
 
       {homepageLastContent && (
         <LastSectionWithButton
           title={homepageLastContent.lastsection_title}
           paragraph={homepageLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop=""
         />
       )}
     </Layout>

@@ -1,0 +1,21 @@
+@import "../../assets/Colors.scss";
+
+.interests-section {
+  display: flex;
+  align-items: center;
+  margin: 0 104px 96px 0;
+  gap: 80px;
+
+  &__image {
+    width: 600px;
+    height: 800px;
+  }
+
+  &__texts {
+    &__paragraph {
+      background-color: $green-color;
+      color: white;
+      padding: 40px;
+    }
+  }
+}

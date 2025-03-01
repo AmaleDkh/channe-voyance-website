@@ -22,7 +22,6 @@ function QuestionAndAnswer({ question, answer }: QuestionsProps) {
       </p>
       {isOpen && (
         <p
-          // className="question-and-answer__answer"
           className={`question-and-answer__answer ${
             isOpen ? "question-and-answer__answer--open" : ""
           }`}

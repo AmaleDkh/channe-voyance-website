@@ -3,7 +3,7 @@
 .image-and-text-section {
   display: flex;
   align-items: center;
-  gap: 104px;
+  gap: 80px;
 
   &__image-container {
     width: 600px;
@@ -42,12 +42,12 @@
   }
 
   &___row-version {
-    margin: 0 0 0 120px;
+    margin: 0 0 0 104px;
   }
 
   &___row-reverse-version {
     flex-direction: row-reverse;
-    margin: 0 120px 0 0;
+    margin: 0 104px 0 0;
   }
 
   &__background-color-version {
@@ -58,13 +58,13 @@
 .image-and-text-section___green-background-color-version {
   background-color: $green-color;
   color: white;
-  padding-right: 120px;
+  padding-right: 104px;
   margin-right: 0;
 }
 
 .image-and-text-section___beige-background-color-version {
   background-color: $beige-color;
-  padding-right: 120px;
+  padding-right: 104px;
   margin: 0 0 0 0;
 }
 

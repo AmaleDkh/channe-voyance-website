@@ -1,7 +1,7 @@
 @import "../../assets/Fonts.scss";
 
 .three-blocks-section {
-  margin: 96px 120px;
+  margin: 96px 104px;
   text-align: center;
 
   &__title {
@@ -14,10 +14,7 @@
 
   &__three-blocks-container {
     display: flex;
-    gap: 104px;
+    justify-content: center;
+    gap: 80px;
   }
 }
-
-// .column-version {
-//   flex-direction: column;
-// }

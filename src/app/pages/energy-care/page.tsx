@@ -2,7 +2,6 @@
 
 // Components
 import Layout from "../../components/Layout/Layout";
-import LargeImageContainer from "../../components/LargeImageContainer/LargeImageContainer";
 import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import Reviews from "../../components/Reviews/Reviews";
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
@@ -11,13 +10,13 @@ import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
 import PricesSection from "@/app/components/PricesSection/PricesSection";
+import InterestsSection from "@/app/components/InterestsSection/InterestsSection";
 
 // Style
 import "../../assets/Global.scss";
 
 // Custom hooks
 import {
-  useLargeImageContainerSectionsData,
   usePageIntroductionSectionsData,
   useBenefitsSectionData,
   useTextAndImageSectionData,
@@ -27,20 +26,16 @@ import {
 } from "../../../hooks/useData";
 
 function EnergyCare() {
-  const { aboutLargeImage } = useLargeImageContainerSectionsData();
   const { energyCareIntroduction } = usePageIntroductionSectionsData();
   const { energyCareLastContent } = useLastSectionsData();
   const { energyCareBenefitsContent } = useBenefitsSectionData();
   const { energyCareFaqContent } = useFaqSectionData();
-  const { PlacePresentation } = useTextAndImageSectionData();
+  const { PlacePresentation, energyCareInterests } =
+    useTextAndImageSectionData();
   const { energyCareStepsContent } = useThreeblocksSectionData();
 
   return (
     <Layout>
-      {/* {aboutLargeImage && (
-        <LargeImageContainer image={aboutLargeImage.banner_image} title="" />
-      )} */}
-
       {energyCareIntroduction && (
         <PageIntroduction
           title={energyCareIntroduction.introduction_title}
@@ -61,6 +56,14 @@ function EnergyCare() {
         />
       )}
 
+      {energyCareInterests && (
+        <InterestsSection
+          image={energyCareInterests.text_and_image_first_image}
+          title={energyCareInterests.text_and_image_title}
+          paragraph={energyCareInterests.text_and_image_paragraph}
+        />
+      )}
+
       {energyCareStepsContent && (
         <ThreeBlocksSection
           sectionTitle={energyCareStepsContent.section_title}
@@ -75,19 +78,15 @@ function EnergyCare() {
           title3={energyCareStepsContent.bloc_3_titre}
           paragraph3={energyCareStepsContent.bloc_3_paragraph}
           flexVersion=""
+          withButton={false}
+          firstButtonLink=""
+          secondButtonLink=""
+          thirdbButtonLink=""
         />
       )}
 
       <Reviews />
 
-      {PlacePresentation && (
-        <PlacePresentationSection
-          title={PlacePresentation.text_and_image_title}
-          paragraph={PlacePresentation.text_and_image_paragraph}
-          firstImage={PlacePresentation.text_and_image_first_image}
-          secondImage={PlacePresentation.text_and_image_second_image}
-        />
-      )}
       <PricesSection />
 
       {energyCareFaqContent && (
@@ -116,10 +115,20 @@ function EnergyCare() {
         />
       )}
 
+      {PlacePresentation && (
+        <PlacePresentationSection
+          title={PlacePresentation.text_and_image_title}
+          paragraph={PlacePresentation.text_and_image_paragraph}
+          firstImage={PlacePresentation.text_and_image_first_image}
+          secondImage={PlacePresentation.text_and_image_second_image}
+        />
+      )}
+
       {energyCareLastContent && (
         <LastSectionWithButton
           title={energyCareLastContent.lastsection_title}
           paragraph={energyCareLastContent.lastsection_paragraph}
+          lastSectionWithButtonWithMarginTop=""
         />
       )}
     </Layout>
