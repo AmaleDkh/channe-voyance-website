@@ -10,7 +10,14 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__blocks">
-        <p>© 2025</p>
+        <div className="header__first-block__name-and-profession">
+          <div className="header__first-block__name-and-profession__first-and-last-name">
+            Channe Len
+          </div>
+          <div className="header__first-block__name-and-profession__profession">
+            Voyante
+          </div>
+        </div>
 
         <div className="footer__blocks__content">
           <div className="footer__blocks__content__block">
@@ -72,7 +79,7 @@ function Footer() {
         </div>
       </div>
 
-      <p>DESIGN & CODE</p>
+      <p>DESIGN & CODE | © 2025</p>
     </footer>
   );
 }

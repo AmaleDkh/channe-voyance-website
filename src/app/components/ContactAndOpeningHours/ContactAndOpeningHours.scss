@@ -1,4 +1,5 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .contact-and-opening-hours {
   background-color: $beige-color;
@@ -6,7 +7,22 @@
   align-items: center;
   gap: 80px;
 
+  @include respond-to-extra-large {
+    padding-right: 40px;
+    gap: 40px;
+  }
+
+  @include respond-to-medium {
+    flex-direction: column;
+    padding: 0;
+  }
+
   &__texts {
+    @include respond-to-medium {
+      padding-bottom: 56px;
+      text-align: center;
+    }
+
     &__blocks {
       display: flex;
       flex-direction: column;
@@ -17,6 +33,12 @@
           margin-bottom: 24px;
         }
       }
+    }
+  }
+
+  img {
+    @include respond-to-medium {
+      width: 100%;
     }
   }
 }

@@ -13,7 +13,7 @@ import PricesSection from "@/app/components/PricesSection/PricesSection";
 import InterestsSection from "@/app/components/InterestsSection/InterestsSection";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
 
 // Custom hooks
 import {

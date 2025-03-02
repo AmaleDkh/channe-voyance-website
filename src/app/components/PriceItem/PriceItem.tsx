@@ -14,13 +14,13 @@ interface priceItemProps {
 function PriceItem({ image, title, duration, price }: priceItemProps) {
   return (
     <div className="price-item">
-      <Image
+      {/* <Image
         src={image}
         alt=""
         className="item-store__image"
         width={400}
         height={400}
-      />
+      /> */}
       <div className="price-item__block">
         <h3 className="price-item__block__title">{title}</h3>
         <p className="price-item__block__duration">{duration}</p>

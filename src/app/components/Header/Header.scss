@@ -1,5 +1,6 @@
-@import "../../assets/Colors.scss";
-@import "../../assets/Fonts.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
+@import "../../assets/style/Fonts.scss";
 
 .header {
   display: flex;
@@ -8,11 +9,29 @@
   gap: 24px;
   padding: 24px 104px;
 
+  @include respond-to-extra-large {
+    padding: 24px 40px;
+  }
+
+  @include respond-to-large {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include respond-to-medium {
+    padding: 24px 16px;
+  }
+
   &__first-block {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     position: relative;
+
+    @include respond-to-large {
+      width: auto;
+    }
 
     &__name-and-profession {
       text-align: center;
@@ -28,5 +47,9 @@
   &__button {
     position: absolute;
     right: 0;
+
+    @include respond-to-large {
+      display: none;
+    }
   }
 }

@@ -1,8 +1,8 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .benefits-section {
   background-color: $beige-color;
-
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -10,9 +10,19 @@
   margin: 96px 0 308px 0;
   position: relative;
 
+  @include respond-to-extra-large {
+    padding: 64px 40px;
+    margin: 64px 0 208px 0;
+  }
+
   &__image-container {
     width: 600px;
     height: 800px;
+
+    @include respond-to-extra-large {
+      width: 400px;
+      height: 600px;
+    }
 
     &__image {
       position: absolute;
@@ -21,6 +31,12 @@
       object-fit: cover;
       width: 600px;
       height: 800px;
+
+      @include respond-to-extra-large {
+        width: 400px;
+        height: 600px;
+        top: 160px;
+      }
     }
   }
 

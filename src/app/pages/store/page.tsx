@@ -8,7 +8,8 @@ import Reviews from "@/app/components/Reviews/Reviews";
 import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
+import "./store.scss";
 
 // Custom hooks
 import {

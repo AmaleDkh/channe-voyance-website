@@ -1,10 +1,21 @@
-@import "../../assets/Colors.scss";
-@import "../../assets/Fonts.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
+@import "../../assets/style/Fonts.scss";
 
 .place-presentation-section {
   background-color: $beige-color;
   padding: 96px 104px;
   margin-bottom: 96px;
+
+  @include respond-to-extra-large {
+    padding: 64px 40px;
+    margin-bottom: 64px;
+  }
+
+  @include respond-to-medium {
+    padding: 40px 16px;
+    margin-bottom: 56px;
+  }
 
   &__texts {
     text-align: center;
@@ -17,11 +28,20 @@
   &__images-block {
     display: flex;
     justify-content: center;
-
     gap: 80px;
+
+    @include respond-to-medium {
+      flex-direction: column;
+      gap: 40px;
+    }
 
     &__image {
       object-fit: cover;
+
+      @include respond-to-medium {
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
 }

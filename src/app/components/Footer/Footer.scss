@@ -1,4 +1,5 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .footer {
   padding: 24px 104px;
@@ -14,10 +15,19 @@
     align-items: center;
     text-align: start;
 
+    @include respond-to-extra-large {
+      flex-direction: column;
+      gap: 40px;
+    }
+
     &__content {
       display: grid;
       grid-template-columns: repeat(3, minmax(208px, 1fr));
       gap: 80px;
+
+      @include respond-to-medium {
+        display: none;
+      }
 
       &__block {
         max-width: 208px;
@@ -33,5 +43,13 @@
         }
       }
     }
+  }
+
+  @include respond-to-extra-large {
+    padding: 24px 40px;
+  }
+
+  @include respond-to-medium {
+    padding: 24px 16px;
   }
 }

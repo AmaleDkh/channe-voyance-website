@@ -7,7 +7,7 @@ import ReviewsPageContent from "@/app/components/ReviewsPageContent/ReviewsPageC
 import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
 
 // Custom hooks
 import {

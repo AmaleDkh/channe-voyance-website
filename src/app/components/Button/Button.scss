@@ -1,4 +1,5 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .button {
   background-color: $dark-gold-color;
@@ -15,6 +16,9 @@
 }
 
 .button-with-margin-auto {
-  // margin-top: 32px;
   margin: auto;
+
+  @include respond-to-medium {
+    margin-bottom: 40px;
+  }
 }

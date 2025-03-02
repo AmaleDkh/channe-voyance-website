@@ -1,4 +1,5 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .interests-section {
   display: flex;
@@ -6,12 +7,37 @@
   margin: 0 104px 96px 0;
   gap: 80px;
 
+  @include respond-to-extra-large {
+    margin: 0 40px 64px 0;
+    gap: 40px;
+  }
+
+  @include respond-to-medium {
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+
   &__image {
     width: 600px;
     height: 800px;
+
+    @include respond-to-extra-large {
+      width: 400px;
+      height: 600px;
+    }
+
+    @include respond-to-medium {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   &__texts {
+    @include respond-to-medium {
+      padding: 0 16px;
+      text-align: center;
+    }
+
     &__paragraph {
       background-color: $green-color;
       color: white;

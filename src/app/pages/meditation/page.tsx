@@ -14,7 +14,7 @@ import SelfPractice from "@/app/components/SelfPractice/SelfPractice";
 import InterestsSection from "@/app/components/InterestsSection/InterestsSection";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
 
 // Custom hooks
 import {

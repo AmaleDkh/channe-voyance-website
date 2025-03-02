@@ -1,8 +1,17 @@
-@import "../../assets/Fonts.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Fonts.scss";
 
 .three-blocks-section {
   margin: 96px 104px;
   text-align: center;
+
+  @include respond-to-extra-large {
+    margin: 64px 40px;
+  }
+
+  @include respond-to-medium {
+    margin: 56px 16px 16px 16px;
+  }
 
   &__title {
     margin-bottom: 24px;
@@ -16,5 +25,10 @@
     display: flex;
     justify-content: center;
     gap: 80px;
+
+    @include respond-to-medium {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }

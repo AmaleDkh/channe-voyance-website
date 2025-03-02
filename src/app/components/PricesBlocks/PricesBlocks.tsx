@@ -37,21 +37,24 @@ function PricesBlocks({
     <section className="price-items">
       <div className="price-items__list">
         <PriceItem
-          image={firstImage}
+          // image={firstImage}
+          image=""
           title={firstTitle}
           duration={firstDuration}
           price={firstPrice}
         />
 
         <PriceItem
-          image={secondImage}
+          // image={secondImage}
+          image=""
           title={secondTitle}
           duration={secondDuration}
           price={secondPrice}
         />
 
         <PriceItem
-          image={thirdImage}
+          // image={thirdImage}
+          image=""
           title={thirdTitle}
           duration={thirdDuration}
           price={thirdPrice}

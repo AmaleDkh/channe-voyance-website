@@ -1,9 +1,14 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .image-and-text-section {
   display: flex;
   align-items: center;
   gap: 80px;
+
+  @include respond-to-extra-large {
+    gap: 40px;
+  }
 
   &__image-container {
     width: 600px;
@@ -13,12 +18,22 @@
       width: 600px;
       height: 800px;
       object-fit: cover;
+      width: 50%;
+
+      @include respond-to-extra-large {
+        width: 100%;
+      }
     }
   }
 
   &__text {
     display: flex;
     flex-direction: column;
+
+    @include respond-to-medium {
+      padding: 0 16px 56px 16px;
+      text-align: center;
+    }
 
     &__title {
       margin: 0 0 56px;
@@ -41,13 +56,31 @@
     }
   }
 
-  &___row-version {
+  &__row-version {
     margin: 0 0 0 104px;
+
+    @include respond-to-extra-large {
+      margin: 0 0 0 40px;
+    }
+
+    @include respond-to-medium {
+      flex-direction: column-reverse;
+      margin: 0;
+    }
   }
 
-  &___row-reverse-version {
+  &__row-reverse-version {
     flex-direction: row-reverse;
     margin: 0 104px 0 0;
+
+    @include respond-to-extra-large {
+      margin: 0 40px 0 0;
+    }
+
+    @include respond-to-medium {
+      flex-direction: column-reverse;
+      padding: 0;
+    }
   }
 
   &__background-color-version {
@@ -55,19 +88,43 @@
   }
 }
 
-.image-and-text-section___green-background-color-version {
+.image-and-text-section__green-background-color-version {
   background-color: $green-color;
   color: white;
   padding-right: 104px;
   margin-right: 0;
+
+  @include respond-to-extra-large {
+    padding-right: 40px;
+  }
+
+  @include respond-to-medium {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
 }
 
-.image-and-text-section___beige-background-color-version {
+.image-and-text-section__beige-background-color-version {
   background-color: $beige-color;
   padding-right: 104px;
   margin: 0 0 0 0;
+
+  @include respond-to-extra-large {
+    padding-right: 40px;
+  }
+
+  @include respond-to-medium {
+    flex-direction: column;
+    padding-right: 0;
+  }
 }
 
-.image-and-text-section___title-color-version {
+.image-and-text-section__title-color-version {
   color: white;
+}
+
+.image-and-text-section__padding-top-version {
+  @include respond-to-medium {
+    padding: 56px 16px 0 16px;
+  }
 }

@@ -12,7 +12,7 @@ import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSe
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
 import "./practical-information.scss";
 
 // Custom hooks

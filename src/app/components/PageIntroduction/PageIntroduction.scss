@@ -1,8 +1,17 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .page-introduction {
   text-align: center;
   margin: 72px 104px 96px 104px;
+
+  @include respond-to-extra-large {
+    margin: 64px 40px;
+  }
+
+  @include respond-to-medium {
+    margin: 56px 16px;
+  }
 
   &__title {
     margin: 0 0 24px 0;

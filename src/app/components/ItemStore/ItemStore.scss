@@ -1,6 +1,16 @@
+@import "../../assets/style/mixins/breakpoints.scss";
+
 .item-store {
+  @include respond-to-medium {
+    width: 100%;
+  }
+
   &__content {
     margin: 24px 0 56px 0;
+
+    @include respond-to-medium {
+      margin: 24px 0 40px 0;
+    }
 
     &__title {
       font-weight: 500;
@@ -12,5 +22,9 @@
     width: 400px;
     height: 400px;
     object-fit: cover;
+
+    @include respond-to-medium {
+      width: 100%;
+    }
   }
 }

@@ -7,12 +7,11 @@ import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSe
 import ThreeBlocksSection from "./components/ThreeBlocksSection/ThreeBlocksSection";
 import SectionWithBackgroundColor from "./components/SectionWithBackgroundColor/SectionWithBackgroundColor";
 import Reviews from "./components/Reviews/Reviews";
-import Button from "./components/Button/Button";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
 import LastSectionWithButton from "./components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
-import "./assets/Global.scss";
+import "./assets/style/Global.scss";
 
 // Custom hooks
 import {
@@ -44,9 +43,10 @@ export default function Home() {
           title={presentationContent.text_and_image_title}
           paragraph={presentationContent.text_and_image_paragraph}
           firstImage={presentationContent.text_and_image_first_image}
-          rowVersion="image-and-text-section___row-reverse-version"
+          rowVersion="image-and-text-section__row-reverse-version"
           titleColorVersion=""
-          backgroundColorVersion="image-and-text-section___beige-background-color-version"
+          backgroundColorVersion="image-and-text-section__beige-background-color-version"
+          paddingTopVersion="image-and-text-section__padding-top-version"
         />
       )}
 
@@ -70,13 +70,6 @@ export default function Home() {
           thirdbButtonLink=""
         />
       )}
-
-      {/* <div className="button-block">
-        <Button
-          text="Tout savoir sur les approches proposées"
-          link="/pages/services"
-        />
-      </div> */}
 
       <SectionWithBackgroundColor />
 

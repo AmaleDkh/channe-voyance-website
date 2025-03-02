@@ -1,7 +1,15 @@
+@import "../../assets/style/mixins/breakpoints.scss";
+
 .price-items {
   &__list {
     display: flex;
     justify-content: space-between;
     gap: 80px;
+
+    @include respond-to-medium {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
   }
 }

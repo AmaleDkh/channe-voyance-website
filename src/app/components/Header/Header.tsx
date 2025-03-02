@@ -1,5 +1,6 @@
-// Next element
+// Next elements
 import Image from "next/image";
+import Link from "next/link";
 
 // Components
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
@@ -19,14 +20,14 @@ function Header() {
           width={80}
           height={80}
         /> */}
-        <div className="header__first-block__name-and-profession">
+        <Link className="header__first-block__name-and-profession" href="/">
           <div className="header__first-block__name-and-profession__first-and-last-name">
             Channe Len
           </div>
           <div className="header__first-block__name-and-profession__profession">
             Voyante
           </div>
-        </div>
+        </Link>
         <div className="header__button">
           <Button text="PRENDRE RENDEZ-VOUS" link="" buttonWithMarginAuto="" />
         </div>

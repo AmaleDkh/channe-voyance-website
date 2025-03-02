@@ -1,13 +1,21 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .self-practice-section {
   margin: 96px 104px 200px 0;
   display: flex;
   align-items: center;
-
   position: relative;
   justify-content: space-between;
   width: 100%;
+
+  @include respond-to-extra-large {
+    margin: 64px 40px 136px 0;
+  }
+
+  @include respond-to-medium {
+    margin: 64px 40px 64px 0;
+  }
 
   &__first-image-container,
   &__second-image-container {
@@ -20,12 +28,22 @@
     &__first-image-container {
       width: 600px;
       height: 800px;
+
+      @include respond-to-extra-large {
+        width: 400px;
+        height: 600px;
+      }
     }
 
     &__image {
       object-fit: cover;
       width: 600px;
       height: 800px;
+
+      @include respond-to-extra-large {
+        width: 400px;
+        height: 600px;
+      }
     }
   }
 
@@ -37,6 +55,13 @@
       object-fit: cover;
       width: 400px;
       height: 600px;
+
+      @include respond-to-extra-large {
+        width: 300px;
+        height: 400px;
+        top: 240px;
+        left: 200px;
+      }
     }
   }
 
@@ -48,5 +73,11 @@
     padding: 160px 104px 160px 280px;
     text-align: center;
     width: 100%;
+
+    @include respond-to-extra-large {
+      padding: 160px 40px 160px 140px;
+    }
+
+    //
   }
 }

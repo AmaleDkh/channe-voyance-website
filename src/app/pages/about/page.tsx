@@ -7,7 +7,7 @@ import ImageAndTextSection from "../../components/ImageAndTextSection/ImageAndTe
 import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
-import "../../assets/Global.scss";
+import "../../assets/style/Global.scss";
 
 // Custom hooks
 import {
@@ -36,9 +36,10 @@ function About() {
           title={firstPartStory.text_and_image_title}
           paragraph={firstPartStory.text_and_image_paragraph}
           firstImage={firstPartStory.text_and_image_first_image}
-          rowVersion="image-and-text-section___row-reverse-version"
-          backgroundColorVersion="image-and-text-section___green-background-color-version"
-          titleColorVersion="image-and-text-section___title-color-version"
+          rowVersion="image-and-text-section__row-reverse-version"
+          backgroundColorVersion="image-and-text-section__green-background-color-version"
+          titleColorVersion="image-and-text-section__title-color-version"
+          paddingTopVersion=""
         />
       )}
 
@@ -47,9 +48,10 @@ function About() {
           title={secondPartStory.text_and_image_title}
           paragraph={secondPartStory.text_and_image_paragraph}
           firstImage={secondPartStory.text_and_image_first_image}
-          rowVersion="image-and-text-section___row-version"
+          rowVersion="image-and-text-section__row-version"
           backgroundColorVersion=""
           titleColorVersion=""
+          paddingTopVersion=""
         />
       )}
 
@@ -58,9 +60,10 @@ function About() {
           title={thirdPartStory.text_and_image_title}
           paragraph={thirdPartStory.text_and_image_paragraph}
           firstImage={thirdPartStory.text_and_image_first_image}
-          rowVersion="image-and-text-section___row-reverse-version"
-          backgroundColorVersion="image-and-text-section___green-background-color-version"
-          titleColorVersion="image-and-text-section___title-color-version"
+          rowVersion="image-and-text-section__row-reverse-version"
+          backgroundColorVersion="image-and-text-section__green-background-color-version"
+          titleColorVersion="image-and-text-section__title-color-version"
+          paddingTopVersion=""
         />
       )}
 
@@ -69,9 +72,10 @@ function About() {
           title={fourthPartStory.text_and_image_title}
           paragraph={fourthPartStory.text_and_image_paragraph}
           firstImage={fourthPartStory.text_and_image_first_image}
-          rowVersion="image-and-text-section___row-version"
+          rowVersion="image-and-text-section__row-version"
           backgroundColorVersion=""
           titleColorVersion=""
+          paddingTopVersion=""
         />
       )}
 

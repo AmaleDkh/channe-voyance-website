@@ -10,6 +10,7 @@ interface presentationProps {
   paragraph: string;
   rowVersion: string;
   backgroundColorVersion: string;
+  paddingTopVersion: string;
   titleColorVersion: string;
 }
 
@@ -19,13 +20,14 @@ function ImageAndTextSection({
   paragraph,
   rowVersion,
   backgroundColorVersion,
+  paddingTopVersion,
   titleColorVersion,
 }: presentationProps) {
   return (
     <section
       className={`image-and-text-section ${rowVersion} ${backgroundColorVersion}`}
     >
-      <div className="image-and-text-section__text">
+      <div className={`image-and-text-section__text ${paddingTopVersion}`}>
         <h2
           className={`image-and-text-section__text__title ${titleColorVersion}`}
         >

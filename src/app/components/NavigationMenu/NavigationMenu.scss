@@ -1,4 +1,5 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .navigation-menu {
   &__list {
@@ -20,6 +21,10 @@
   }
 
   &__list {
+    @include respond-to-large {
+      display: none;
+    }
+
     &__item {
       position: relative;
 
@@ -34,4 +39,97 @@
 
 .fa-caret-down {
   cursor: pointer;
+}
+
+.menu-hamburger {
+  display: none;
+
+  @include respond-to-large {
+    display: block;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+
+    @include respond-to-large {
+      height: 100%;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      margin: 6px 0;
+    }
+  }
+
+  &__nav {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 0;
+    border-radius: 4px;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      background-color: $light-beige-color;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      li {
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 500;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.size-6 {
+  align-self: flex-end;
+  margin-right: 40px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  @include respond-to-large {
+    margin-right: 64px;
+  }
+
+  @include respond-to-medium {
+    margin-right: 16px;
+  }
 }

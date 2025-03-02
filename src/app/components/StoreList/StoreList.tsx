@@ -19,11 +19,11 @@ function StoreList() {
             name={boutiqueItemsContent.store_first_item_name}
             price={boutiqueItemsContent.store_first_item_price}
           />
-          <ItemStore
+          {/* <ItemStore
             image={boutiqueItemsContent.store_second_item_image}
             name={boutiqueItemsContent.store_second_item_name}
             price={boutiqueItemsContent.store_second_item_price}
-          />
+          /> */}
           <ItemStore
             image={boutiqueItemsContent.store_third_item_image}
             name={boutiqueItemsContent.store_third_item_name}

@@ -1,13 +1,27 @@
-@import "../../assets/Colors.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
 
 .reviews-page-section {
   margin: 96px 104px;
+
+  @include respond-to-extra-large {
+    margin: 64px 40px;
+  }
+
+  @include respond-to-medium {
+    margin: 56px 16px;
+  }
 
   &__block {
     display: flex;
     justify-content: space-between;
     gap: 400px;
     align-items: center;
+
+    @include respond-to-medium {
+      flex-direction: column;
+      gap: 24px;
+    }
 
     &__title {
       margin-bottom: 0;
@@ -16,6 +30,10 @@
     &__content {
       background-color: $green-color;
       padding: 40px;
+
+      @include respond-to-medium {
+        text-align: center;
+      }
 
       &__review {
         color: white;
@@ -32,4 +50,9 @@
 
 .reviews-page-section__block--row-reverse-version {
   flex-direction: row-reverse;
+
+  @include respond-to-medium {
+    flex-direction: column;
+    gap: 24px;
+  }
 }

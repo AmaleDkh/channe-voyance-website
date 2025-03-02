@@ -1,19 +1,31 @@
-@import "../../assets/Colors.scss";
-@import "../../assets/Fonts.scss";
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
+@import "../../assets/style/Fonts.scss";
 
 .frequently-asked-questions-section {
   margin: 96px 0 0 0;
   width: 100%;
 
+  @include respond-to-extra-large {
+    margin: 64px 0 0 0;
+  }
+
   &__questions-container {
     display: flex;
     flex-direction: column;
-
     align-items: center;
     padding-right: 104px;
     padding: 96px 104px;
     background-color: $green-color;
     color: white;
+
+    @include respond-to-extra-large {
+      padding: 64px 40px;
+    }
+
+    @include respond-to-medium {
+      padding: 40px 16px;
+    }
 
     &__title {
       color: white;
@@ -24,6 +36,11 @@
       flex-direction: column;
       gap: 40px;
       width: 800px;
+
+      @include respond-to-medium {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }
