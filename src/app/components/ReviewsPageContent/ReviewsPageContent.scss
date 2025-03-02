@@ -3,9 +3,5 @@
 .reviews-page-section {
   display: flex;
   flex-direction: column;
-  gap: 80px;
-
-  @include respond-to-medium {
-    gap: 40px;
-  }
+  gap: 40px;
 }

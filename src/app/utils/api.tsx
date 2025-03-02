@@ -189,6 +189,24 @@ export const fetchPracticalInformationSection = async () => {
   }
 };
 
+// Get all reviews section
+export const fetchReviewsSection = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/reviews`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET des sections");
+    }
+
+    const sections = await response.json();
+
+    return sections;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des sections", error);
+    throw error;
+  }
+};
+
 // Get all last sections
 export const fetchLastSections = async () => {
   try {

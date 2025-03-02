@@ -14,6 +14,7 @@ import {
   fetchBoutiqueSection,
   fetchCarePricesSections,
   fetchPracticalInformationSection,
+  fetchReviewsSection,
 } from "@/app/utils/api";
 
 type LargeImageContainerSection = {
@@ -152,6 +153,11 @@ type PracticalInformationSection = {
 type lastSection = {
   lastsection_title: string;
   lastsection_paragraph: string;
+};
+
+type reviewSection = {
+  client_name: string;
+  client_review: string;
 };
 
 export const useLargeImageContainerSectionsData = () => {
@@ -478,8 +484,6 @@ export const useFaqSectionData = () => {
     const fetchData = async () => {
       try {
         const faqSectionsList = await fetchFaqSections();
-        console.log("faqSectionsList", faqSectionsList);
-
         const readingFaqContentData = faqSectionsList[3].acf;
         const meditationFaqContentData = faqSectionsList[2].acf;
         const energyCareFaqContentData = faqSectionsList[1].acf;
@@ -605,6 +609,64 @@ export const usePracticalInformationData = () => {
 
   return {
     practicalInformationContent,
+  };
+};
+
+export const useReviewsData = () => {
+  const [firstReviewContent, setFirstReviewContent] =
+    useState<reviewSection | null>(null);
+
+  const [secondReviewContent, setSecondReviewContent] =
+    useState<reviewSection | null>(null);
+
+  const [thirdReviewContent, setThirdReviewContent] =
+    useState<reviewSection | null>(null);
+
+  const [fourthReviewContent, setFourthReviewContent] =
+    useState<reviewSection | null>(null);
+
+  const [fifthReviewContent, setFifthReviewContent] =
+    useState<reviewSection | null>(null);
+
+  const [sixthReviewContent, setSixthReviewContent] =
+    useState<reviewSection | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const reviewsContentData = await fetchReviewsSection();
+        const firstReviewContentSection = reviewsContentData[5].acf;
+        const secondReviewContentSection = reviewsContentData[4].acf;
+        const thirdReviewContentSection = reviewsContentData[3].acf;
+        const fourthReviewContentSection = reviewsContentData[2].acf;
+        const fifthReviewContentSection = reviewsContentData[1].acf;
+        const sixthReviewContentSection = reviewsContentData[0].acf;
+
+        if (reviewsContentData) {
+          setFirstReviewContent(firstReviewContentSection);
+          setSecondReviewContent(secondReviewContentSection);
+          setThirdReviewContent(thirdReviewContentSection);
+          setFourthReviewContent(fourthReviewContentSection);
+          setFifthReviewContent(fifthReviewContentSection);
+          setSixthReviewContent(sixthReviewContentSection);
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return {
+    firstReviewContent,
+    secondReviewContent,
+    thirdReviewContent,
+    fourthReviewContent,
+    fifthReviewContent,
+    sixthReviewContent,
   };
 };
 

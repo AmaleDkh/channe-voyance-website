@@ -4,33 +4,68 @@ import "./ReviewsPageContent.scss";
 // Component
 import ReviewsBlockPageContent from "../ReviewsBlockPageContent/ReviewsBlockPageContent";
 
+// Custom hook
+import { useReviewsData } from "../../../hooks/useData";
+
 function ReviewsPageContent() {
+  const {
+    firstReviewContent,
+    secondReviewContent,
+    thirdReviewContent,
+    fourthReviewContent,
+    fifthReviewContent,
+    sixthReviewContent,
+  } = useReviewsData();
+
   return (
     <section className="reviews-page-section">
-      <ReviewsBlockPageContent
-        title="Lorem ipsum"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat."
-        flexVersion=""
-      />
-      <ReviewsBlockPageContent
-        title="Lorem ipsum"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat."
-        flexVersion="reviews-page-section__block--row-reverse-version"
-      />
-      <ReviewsBlockPageContent
-        title="Lorem ipsum"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat."
-        flexVersion=""
-      />
+      {firstReviewContent && (
+        <ReviewsBlockPageContent
+          title={firstReviewContent.client_name}
+          paragraph={firstReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
+
+      {secondReviewContent && (
+        <ReviewsBlockPageContent
+          title={secondReviewContent.client_name}
+          paragraph={secondReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
+
+      {thirdReviewContent && (
+        <ReviewsBlockPageContent
+          title={thirdReviewContent.client_name}
+          paragraph={thirdReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
+
+      {fourthReviewContent && (
+        <ReviewsBlockPageContent
+          title={fourthReviewContent.client_name}
+          paragraph={fourthReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
+
+      {fifthReviewContent && (
+        <ReviewsBlockPageContent
+          title={fifthReviewContent.client_name}
+          paragraph={fifthReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
+
+      {sixthReviewContent && (
+        <ReviewsBlockPageContent
+          title={sixthReviewContent.client_name}
+          paragraph={sixthReviewContent.client_review}
+          flexVersion=""
+        />
+      )}
     </section>
   );
 }
