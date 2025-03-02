@@ -32,10 +32,11 @@
     &__first-item,
     &__second-item {
       &__content {
-        background-color: $beige-color;
+        border: 2px solid $beige-color;
         padding: 24px;
         flex: 2;
         width: 400px;
+        text-align: center;
 
         @include respond-to-medium {
           width: 100%;
@@ -45,12 +46,16 @@
 
       &__title {
         margin-bottom: 24px;
+        font-size: 24px;
       }
 
       &__duration {
         margin-bottom: 8px;
-        font-weight: 500;
       }
     }
+  }
+
+  &__paragraph {
+    margin-top: 40px;
   }
 }

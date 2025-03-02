@@ -87,11 +87,21 @@ function NavigationMenu() {
         <li className="navigation-menu__list__item">
           <Link
             className="navigation-menu__list__item__link"
+            href="/pages/prices"
+          >
+            TARIFS
+          </Link>
+        </li>
+
+        <li className="navigation-menu__list__item">
+          <Link
+            className="navigation-menu__list__item__link"
             href="/pages/practical-information"
           >
             INFORMATIONS PRATIQUES
           </Link>
         </li>
+
         <li className="navigation-menu__list__item">
           <Link
             className="navigation-menu__list__item__link"
@@ -100,6 +110,7 @@ function NavigationMenu() {
             BOUTIQUE
           </Link>
         </li>
+
         <li className="navigation-menu__list__item">
           <Link
             className="navigation-menu__list__item__link"
@@ -108,6 +119,7 @@ function NavigationMenu() {
             AVIS
           </Link>
         </li>
+
         <li className="navigation-menu__list__item">
           <Link
             className="navigation-menu__list__item__link"
@@ -161,6 +173,15 @@ function NavigationMenu() {
                   href="/pages/services"
                 >
                   LES APPPROCHES
+                </Link>
+              </li>
+
+              <li className="navigation-menu__list__item">
+                <Link
+                  className="navigation-menu__list__item__link"
+                  href="/pages/prices"
+                >
+                  TARIFS
                 </Link>
               </li>
 

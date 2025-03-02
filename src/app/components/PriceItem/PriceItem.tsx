@@ -22,7 +22,7 @@ function PriceItem({ image, title, duration, price }: priceItemProps) {
         height={400}
       /> */}
       <div className="price-item__block">
-        <h3 className="price-item__block__title">{title}</h3>
+        <p className="price-item__block__title">{title}</p>
         <p className="price-item__block__duration">{duration}</p>
         <p>{price}</p>
       </div>

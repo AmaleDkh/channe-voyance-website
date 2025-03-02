@@ -1,5 +1,6 @@
 // Next element
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Style
 import "./ReadingPricesBlocks.scss";
@@ -25,21 +26,23 @@ function ReadingPricesBlocks({
   secondItemDuration,
   secondItemPrice,
 }: ReadingPricesBlocksProps) {
+  const pathname = usePathname();
+
   return (
     <section className="reading-price">
       <div className="reading-price__blocks">
         <div className="reading-price__blocks__first-item">
-          <Image
+          {/* <Image
             src={firstItemImage}
             alt=""
             className="reading-price__blocks__first-item__image"
             width={400}
             height={400}
-          />
+          /> */}
           <div className="reading-price__blocks__first-item__content">
-            <h3 className="reading-price__blocks__first-item__title">
+            <p className="reading-price__blocks__first-item__title">
               {firstItemTitle}
-            </h3>
+            </p>
             <p className="reading-price__blocks__first-item__duration">
               {firstItemDuration}
             </p>
@@ -48,17 +51,17 @@ function ReadingPricesBlocks({
         </div>
 
         <div className="reading-price__blocks__first-item">
-          <Image
+          {/* <Image
             src={secondItemImage}
             alt=""
             className="reading-price__blocks__first-item__image"
             width={400}
             height={400}
-          />
+          /> */}
           <div className="reading-price__blocks__first-item__content">
-            <h3 className="reading-price__blocks__second-item__title">
+            <p className="reading-price__blocks__second-item__title">
               {secondItemTitle}
-            </h3>
+            </p>
             <p className="reading-price__blocks__second-item__duration">
               {secondItemDuration}
             </p>
@@ -66,6 +69,13 @@ function ReadingPricesBlocks({
           </div>
         </div>
       </div>
+
+      {pathname === "/pages/prices" && (
+        <p className="reading-price__paragraph">
+          Si vous souhaitez échanger quelques minutes avant de réserver une
+          séance, 1 minute sera facturée 3 €.
+        </p>
+      )}
     </section>
   );
 }

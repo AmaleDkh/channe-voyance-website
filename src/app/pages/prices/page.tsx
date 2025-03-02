@@ -2,79 +2,43 @@
 
 // Components
 import Layout from "../../components/Layout/Layout";
-import PageIntroduction from "@/app/components/PageIntroduction/PageIntroduction";
-import ContactAndOpeningHours from "@/app/components/ContactAndOpeningHours/ContactAndOpeningHours";
-import AddressAndAccess from "@/app/components/AddressAndAccess/AddressAndAccess";
-import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import PricesBlocks from "@/app/components/PricesBlocks/PricesBlocks";
+import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
 import ReadingPricesBlocks from "@/app/components/ReadingPricesBlocks/ReadingPricesBlocks";
-import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSectionWithButton";
+import PricesBlocks from "@/app/components/PricesBlocks/PricesBlocks";
+import FrequentlyAskedQuestions from "@/app/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import PlacePresentationSection from "@/app/components/PlacePresentationSection/PlacePresentationSection";
+import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
 import "../../assets/style/Global.scss";
-import "./practical-information.scss";
+import "../practical-information/practical-information.scss";
+import "./prices.scss";
 
 // Custom hooks
 import {
-  usePageIntroductionSectionsData,
-  usePracticalInformationData,
-  useFaqSectionData,
   useCarePricesBlocksData,
-  useLastSectionsData,
+  useFaqSectionData,
   useTextAndImageSectionData,
+  useLastSectionsData,
 } from "../../../hooks/useData";
 
-function PracticalInformation() {
-  const { practicalInformationIntroduction } =
-    usePageIntroductionSectionsData();
-  const { practicalInformationContent } = usePracticalInformationData();
-  const { practicalInformationFaqContent } = useFaqSectionData();
+function Prices() {
   const { readingCarePricesContent, meditationCarePricesContent } =
     useCarePricesBlocksData();
+  const { practicalInformationFaqContent } = useFaqSectionData();
   const { homepageLastContent } = useLastSectionsData();
   const { PlacePresentation } = useTextAndImageSectionData();
 
   return (
     <Layout>
-      {practicalInformationIntroduction && (
-        <PageIntroduction
-          title={practicalInformationIntroduction.introduction_title}
-          subtitle={practicalInformationIntroduction.introduction_subtitle}
-        />
-      )}
-
-      {practicalInformationContent && (
-        <ContactAndOpeningHours
-          image={practicalInformationContent.practical_information_image}
-          contact={practicalInformationContent.contact}
-          openingHours={practicalInformationContent.opening_hours}
-        />
-      )}
-
-      {practicalInformationContent && (
-        <AddressAndAccess
-          localisationAddress={practicalInformationContent.localisation_address}
-          localisationFirstAccess={
-            practicalInformationContent.localisation_first_access
-          }
-          localisationSecondAccess={
-            practicalInformationContent.localisation_second_access
-          }
-          localisationThirdAccess={
-            practicalInformationContent.localisation_third_access
-          }
-        />
-      )}
+      <PageIntroduction title="Tarifs" subtitle="" />
 
       <div className="practical-information__prices">
-        <h2>Durées & tarifs</h2>
-
-        <div className="practical-information__prices__blocks">
+        <div className="practical-information__prices__blocks prices-page-version">
           <div className="practical-information__prices__blocks__block">
-            <h3 className="practical-information__prices__blocks__block__title">
+            <h2 className="practical-information__prices__blocks__block__title">
               La voyance
-            </h3>
+            </h2>
             {readingCarePricesContent && (
               <ReadingPricesBlocks
                 firstItemImage={readingCarePricesContent.first_care_image}
@@ -96,9 +60,9 @@ function PracticalInformation() {
           </div>
 
           <div className="practical-information__prices__blocks__block">
-            <h3 className="practical-information__prices__blocks__block__title">
+            <h2 className="practical-information__prices__blocks__block__title">
               La méditation et les soins énergétiques
-            </h3>
+            </h2>
 
             {meditationCarePricesContent && (
               <PricesBlocks
@@ -126,6 +90,10 @@ function PracticalInformation() {
             )}
           </div>
         </div>
+
+        <p className="prices-page__paragraph">
+          Modes de paiement acceptés : Carte bancaire, PayPal, chèques, espèces.
+        </p>
       </div>
 
       {practicalInformationFaqContent && (
@@ -146,11 +114,11 @@ function PracticalInformation() {
           answer7={practicalInformationFaqContent.faq_section_answer7}
           question8={practicalInformationFaqContent.faq_section_question8}
           answer8={practicalInformationFaqContent.faq_section_answer8}
-          question9={practicalInformationFaqContent.faq_section_question9}
-          answer9={practicalInformationFaqContent.faq_section_answer9}
-          question10={practicalInformationFaqContent.faq_section_question10}
-          answer10={practicalInformationFaqContent.faq_section_answer10}
-          image={practicalInformationFaqContent.faq_section_image}
+          question9=""
+          answer9=""
+          question10=""
+          answer10=""
+          image=""
         />
       )}
 
@@ -174,4 +142,4 @@ function PracticalInformation() {
   );
 }
 
-export default PracticalInformation;
+export default Prices;

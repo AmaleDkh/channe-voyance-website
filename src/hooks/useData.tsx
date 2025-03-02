@@ -478,6 +478,7 @@ export const useFaqSectionData = () => {
     const fetchData = async () => {
       try {
         const faqSectionsList = await fetchFaqSections();
+        console.log("faqSectionsList", faqSectionsList);
 
         const readingFaqContentData = faqSectionsList[3].acf;
         const meditationFaqContentData = faqSectionsList[2].acf;

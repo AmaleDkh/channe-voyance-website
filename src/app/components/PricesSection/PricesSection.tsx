@@ -49,12 +49,9 @@ function PricesSection() {
         />
       ) : null}
 
-      <p className="prices-section__payment-methods">
-        Les séances peuvent se faire au cabinet ou en visioconférence.
-        <br></br>
+      <div className="prices-section__payment-methods">
         {pathname === "/pages/reading" ? (
           <p>
-            {" "}
             Si vous souhaitez échanger quelques minutes avant de réserver une
             séance, 1 minute sera facturée 3 €.
             <br></br>
@@ -63,9 +60,12 @@ function PricesSection() {
             <br></br>
           </p>
         ) : (
-          ""
+          <p>
+            Modes de paiement acceptés : Carte bancaire, PayPal, chèques,
+            espèces.
+          </p>
         )}
-      </p>
+      </div>
     </section>
   );
 }
