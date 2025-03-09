@@ -2,7 +2,7 @@
 @import "../../assets/style/Fonts.scss";
 
 .three-blocks-section {
-  margin: 96px 104px;
+  margin: 64px 104px;
   text-align: center;
 
   @include respond-to-extra-large {
@@ -10,15 +10,15 @@
   }
 
   @include respond-to-medium {
-    margin: 56px 16px 16px 16px;
-  }
-
-  &__title {
-    margin-bottom: 24px;
+    margin: 48px 16px;
   }
 
   &__paragraph {
     margin-bottom: 56px;
+
+    @include respond-to-medium {
+      margin-bottom: 24px;
+    }
   }
 
   &__three-blocks-container {
@@ -28,7 +28,7 @@
 
     @include respond-to-medium {
       flex-direction: column;
-      gap: 0;
+      gap: 32px;
     }
   }
 }

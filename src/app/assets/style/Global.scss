@@ -1,3 +1,4 @@
+@import "./mixins/breakpoints.scss";
 @import "./Colors.scss";
 @import "./Fonts.scss";
 
@@ -21,17 +22,39 @@ h1 {
   font-size: 56px;
   font-style: italic;
   color: $green-color;
+  margin-bottom: 40px;
+
+  @include respond-to-extra-large {
+    margin-bottom: 32px;
+  }
+
+  @include respond-to-medium {
+    margin-bottom: 24px;
+  }
 }
 
 h2 {
   color: $gold-color;
   font-size: 48px;
-  margin-bottom: 56px;
+  margin-bottom: 32px;
+
+  @include respond-to-extra-large {
+    margin-bottom: 24px;
+  }
+
+  @include respond-to-medium {
+    margin-bottom: 16px;
+  }
 }
 
 h3 {
   font-size: 24px;
   color: $green-color;
+  margin-bottom: 16px;
+
+  @include respond-to-medium {
+    margin-bottom: 8px;
+  }
 }
 
 .button-block {

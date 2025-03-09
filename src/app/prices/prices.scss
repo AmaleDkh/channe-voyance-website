@@ -1,0 +1,19 @@
+@import "../assets/style/mixins/breakpoints.scss";
+
+.prices-page-version {
+  gap: 64px;
+
+  @include respond-to-medium {
+    gap: 48px;
+  }
+}
+
+.prices-page {
+  &__paragraph {
+    margin-top: 64px;
+
+    @include respond-to-medium {
+      margin-top: 32px;
+    }
+  }
+}

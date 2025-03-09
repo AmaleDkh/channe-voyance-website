@@ -1,11 +1,12 @@
 @import "../../assets/style/mixins/breakpoints.scss";
 @import "../../assets/style/Colors.scss";
+@import "../../assets/style/Fonts.scss";
 
 .section-with-background-color {
   background-color: $green-color;
   color: white;
-  padding: 96px 104px;
-  margin-bottom: 96px;
+  padding: 64px 104px;
+  margin-bottom: 64px;
   text-align: center;
 
   @include respond-to-extra-large {
@@ -15,11 +16,17 @@
 
   @include respond-to-medium {
     padding: 40px 16px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 
   &__title {
     margin: 0 0 24px 0;
     color: white;
+  }
+
+  &__paragraph {
+    font-family: "EB Garamond";
+    font-style: italic;
+    font-size: 40px;
   }
 }

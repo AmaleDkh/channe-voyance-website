@@ -6,10 +6,11 @@
   }
 
   &__content {
-    margin: 24px 0 56px 0;
+    margin-top: 24px;
+    text-align: center;
 
     @include respond-to-medium {
-      margin: 24px 0 40px 0;
+      margin-top: 16px;
     }
 
     &__title {
@@ -19,8 +20,8 @@
   }
 
   &__image {
-    width: 400px;
-    height: 400px;
+    width: 344px;
+    height: 344px;
     object-fit: cover;
 
     @include respond-to-medium {

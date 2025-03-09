@@ -30,19 +30,31 @@ function BenefitsSection({
 
   return (
     <section className="benefits-section">
-      <div className="benefits-section__text">
-        <h2 className="benefits-section__text__title">{title}</h2>
-        <p className="benefits-section__text__paragraph">{introduction}</p>
-      </div>
+      <div className="benefits-section__text-block">
+        <div className="benefits-section__text">
+          <h2 className="benefits-section__text__title">{title}</h2>
+          <p className="benefits-section__text__paragraph">{introduction}</p>
+        </div>
 
-      <div className="benefits-section__content">
-        <ul className="benefits-section__content__list">
-          <li className="benefits-section__content__list__item">{benefit1}</li>
-          <li className="benefits-section__content__list__item">{benefit2}</li>
-          <li className="benefits-section__content__list__item">{benefit3}</li>
-          <li className="benefits-section__content__list__item">{benefit4}</li>
-          <li className="benefits-section__content__list__item">{benefit5}</li>
-        </ul>
+        <div className="benefits-section__content">
+          <ul className="benefits-section__content__list">
+            <li className="benefits-section__content__list__item">
+              {benefit1}
+            </li>
+            <li className="benefits-section__content__list__item">
+              {benefit2}
+            </li>
+            <li className="benefits-section__content__list__item">
+              {benefit3}
+            </li>
+            <li className="benefits-section__content__list__item">
+              {benefit4}
+            </li>
+            <li className="benefits-section__content__list__item">
+              {benefit5}
+            </li>
+          </ul>
+        </div>
       </div>
 
       <Image

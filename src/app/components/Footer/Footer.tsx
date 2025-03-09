@@ -5,17 +5,17 @@ import "./Footer.scss";
 import { usePracticalInformationData } from "../../../hooks/useData";
 
 function Footer() {
-  const { practicalInformationContent } = usePracticalInformationData();
+  const practicalInformationContentArray = usePracticalInformationData();
 
   return (
     <footer className="footer">
       <div className="footer__blocks">
         <div className="header__first-block__name-and-profession">
           <div className="header__first-block__name-and-profession__first-and-last-name">
-            Channe Len
+            Channe
           </div>
           <div className="header__first-block__name-and-profession__profession">
-            Voyante
+            Voyance
           </div>
         </div>
 
@@ -43,13 +43,14 @@ function Footer() {
             <h3 className="footer__blocks__content__block__title">
               Coordonnées
             </h3>
-            {practicalInformationContent && (
+
+            {practicalInformationContentArray && (
               <div className="footer__blocks__content__block__texts">
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.contact}
+                  {practicalInformationContentArray[0]?.contact}
                 </p>
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.opening_hours}
+                  {practicalInformationContentArray[0]?.opening_hours}
                 </p>
               </div>
             )}
@@ -59,19 +60,29 @@ function Footer() {
             <h3 className="footer__blocks__content__block__title">
               Adresse & accès
             </h3>
-            {practicalInformationContent && (
+
+            {practicalInformationContentArray && (
               <div className="footer__blocks__content__block__texts">
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.localisation_address}
+                  {practicalInformationContentArray[0]?.localisation_address}
                 </p>
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.localisation_first_access}
+                  {
+                    practicalInformationContentArray[0]
+                      ?.localisation_first_access
+                  }
                 </p>
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.localisation_second_access}
+                  {
+                    practicalInformationContentArray[0]
+                      ?.localisation_second_access
+                  }
                 </p>
                 <p className="footer__blocks__content__block__texts__text">
-                  {practicalInformationContent.localisation_third_access}
+                  {
+                    practicalInformationContentArray[0]
+                      ?.localisation_third_access
+                  }
                 </p>
               </div>
             )}
@@ -79,7 +90,10 @@ function Footer() {
         </div>
       </div>
 
-      <p>DESIGN & CODE | © 2025</p>
+      <p>
+        DESIGN & CODE PAR AMALE DKHISSI |{" "}
+        <a href="https://amale-dkhissi.com/">PORTFOLIO</a>
+      </p>
     </footer>
   );
 }

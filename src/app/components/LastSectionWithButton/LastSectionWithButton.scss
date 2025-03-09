@@ -5,23 +5,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
-  margin: 0 104px 96px 104px;
+  gap: 24px;
+  margin: 0 104px 64px 104px;
 
   @include respond-to-extra-large {
     margin: 0 40px 64px 40px;
+    gap: 16px;
   }
 
   @include respond-to-medium {
-    margin: 0 16px 56px 16px;
+    margin: 0 16px 48px 16px;
   }
 
   &__text {
     text-align: center;
-
-    &__title {
-      margin-bottom: 24px;
-    }
 
     &__subtitle {
       text-align: center;
@@ -30,7 +27,7 @@
 }
 
 .last-section-with-button__with-margin-top {
-  margin-top: 96px;
+  margin-top: 64px;
 
   @include respond-to-extra-large {
     margin-top: 64px;

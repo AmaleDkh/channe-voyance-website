@@ -43,12 +43,8 @@ function NavigationMenu() {
           className="navigation-menu__list__item pratices-item navigation-menu__list__item--pratices-item"
           onClick={handleMenuToggle}
         >
-          <Link
-            className="navigation-menu__list__item__link"
-            href="/pages/services"
-          >
-            {/* PRATIQUES */}
-            LES APPPROCHES
+          <Link className="navigation-menu__list__item__link" href="/services">
+            PRATIQUES
           </Link>
           <FontAwesomeIcon icon={faCaretDown} />
 
@@ -57,7 +53,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/reading"
+                  href="/reading"
                 >
                   VOYANCE
                 </Link>
@@ -66,7 +62,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/meditation"
+                  href="/meditation"
                 >
                   MÉDITATION
                 </Link>
@@ -75,7 +71,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/energy-care"
+                  href="/energy-care"
                 >
                   SOINS ÉNERGÉTIQUES
                 </Link>
@@ -85,10 +81,7 @@ function NavigationMenu() {
         </li>
 
         <li className="navigation-menu__list__item">
-          <Link
-            className="navigation-menu__list__item__link"
-            href="/pages/prices"
-          >
+          <Link className="navigation-menu__list__item__link" href="/prices">
             TARIFS
           </Link>
         </li>
@@ -96,35 +89,26 @@ function NavigationMenu() {
         <li className="navigation-menu__list__item">
           <Link
             className="navigation-menu__list__item__link"
-            href="/pages/practical-information"
+            href="/practical-information"
           >
             INFORMATIONS PRATIQUES
           </Link>
         </li>
 
         <li className="navigation-menu__list__item">
-          <Link
-            className="navigation-menu__list__item__link"
-            href="/pages/store"
-          >
+          <Link className="navigation-menu__list__item__link" href="/store">
             BOUTIQUE
           </Link>
         </li>
 
         <li className="navigation-menu__list__item">
-          <Link
-            className="navigation-menu__list__item__link"
-            href="/pages/reviews"
-          >
+          <Link className="navigation-menu__list__item__link" href="/reviews">
             AVIS
           </Link>
         </li>
 
         <li className="navigation-menu__list__item">
-          <Link
-            className="navigation-menu__list__item__link"
-            href="/pages/about"
-          >
+          <Link className="navigation-menu__list__item__link" href="/about">
             À PROPOS
           </Link>
         </li>
@@ -170,16 +154,16 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/services"
+                  href="/services"
                 >
-                  LES APPPROCHES
+                  PRATIQUES
                 </Link>
               </li>
 
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/prices"
+                  href="/prices"
                 >
                   TARIFS
                 </Link>
@@ -188,7 +172,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/practical-information"
+                  href="/practical-information"
                 >
                   INFORMATIONS PRATIQUES
                 </Link>
@@ -197,7 +181,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/store"
+                  href="/store"
                 >
                   BOUTIQUE
                 </Link>
@@ -206,7 +190,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/reviews"
+                  href="/reviews"
                 >
                   AVIS
                 </Link>
@@ -215,7 +199,7 @@ function NavigationMenu() {
               <li className="navigation-menu__list__item">
                 <Link
                   className="navigation-menu__list__item__link"
-                  href="/pages/about"
+                  href="/about"
                 >
                   À PROPOS
                 </Link>

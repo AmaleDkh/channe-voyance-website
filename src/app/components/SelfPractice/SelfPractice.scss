@@ -2,7 +2,7 @@
 @import "../../assets/style/Colors.scss";
 
 .self-practice-section {
-  margin: 96px 104px 200px 0;
+  margin: 64px 104px 200px 0;
   display: flex;
   align-items: center;
   position: relative;
@@ -14,7 +14,7 @@
   }
 
   @include respond-to-medium {
-    margin: 64px 40px 64px 0;
+    margin: 48px 40px 48px 0;
   }
 
   &__first-image-container,

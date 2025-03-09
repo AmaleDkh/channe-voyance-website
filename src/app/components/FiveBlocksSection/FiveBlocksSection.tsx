@@ -46,7 +46,7 @@ function FiveBlocksSection({
       <h3 className="five-blocks-section__introduction">
         {sectionIntroduction}
       </h3>
-      <div className="five-blocks-section__five-blocks-container">
+      {/* <div className="five-blocks-section__five-blocks-container">
         <ImageAndTextBlock
           image={image1}
           title={title1}
@@ -81,7 +81,7 @@ function FiveBlocksSection({
           paragraph={paragraph5}
           flexVersion="row-version"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

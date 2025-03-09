@@ -1,17 +1,24 @@
+@import "../../assets/style/mixins/breakpoints.scss";
 @import "../../assets/style/Colors.scss";
 
 .price-item {
   border-radius: 8px;
-
   flex: 1;
 
   &__block {
     border: 2px solid $beige-color;
-    padding: 24px;
+    padding: 24px 80px;
+    width: fit-content;
+    margin: auto;
 
     &__title {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       font-size: 24px;
+
+      @include respond-to-medium {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
     }
 
     &__duration {

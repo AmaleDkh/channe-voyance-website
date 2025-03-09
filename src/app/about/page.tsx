@@ -1,26 +1,26 @@
 "use client";
 
 // Components
-import Layout from "../../components/Layout/Layout";
-import PageIntroduction from "../../components/PageIntroduction/PageIntroduction";
-import ImageAndTextSection from "../../components/ImageAndTextSection/ImageAndTextSection";
-import LastSectionWithButton from "../../components/LastSectionWithButton/LastSectionWithButton";
+import Layout from "../components/Layout/Layout";
+import PageIntroduction from "../components/PageIntroduction/PageIntroduction";
+import ImageAndTextSection from "../components/ImageAndTextSection/ImageAndTextSection";
+import LastSectionWithButton from "../components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
-import "../../assets/style/Global.scss";
+import "../assets/style/Global.scss";
 
 // Custom hooks
 import {
   usePageIntroductionSectionsData,
   useTextAndImageSectionData,
   useLastSectionsData,
-} from "../../../hooks/useData";
+} from "../../hooks/useData";
 
 function About() {
   const { firstPartStory, secondPartStory, thirdPartStory, fourthPartStory } =
     useTextAndImageSectionData();
   const { aboutIntroduction } = usePageIntroductionSectionsData();
-  const { aboutLastContent } = useLastSectionsData();
+  const lastSectionsContentArray = useLastSectionsData();
 
   return (
     <Layout>
@@ -79,10 +79,10 @@ function About() {
         />
       )}
 
-      {aboutLastContent && (
+      {lastSectionsContentArray?.[4] && (
         <LastSectionWithButton
-          title={aboutLastContent.lastsection_title}
-          paragraph={aboutLastContent.lastsection_paragraph}
+          title={lastSectionsContentArray[4].lastsection_title}
+          paragraph={lastSectionsContentArray[4].lastsection_paragraph}
           lastSectionWithButtonWithMarginTop="last-section-with-button__with-margin-top"
         />
       )}

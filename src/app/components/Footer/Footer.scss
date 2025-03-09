@@ -2,7 +2,7 @@
 @import "../../assets/style/Colors.scss";
 
 .footer {
-  padding: 24px 104px;
+  padding: 64px 104px;
   background-color: $beige-color;
   text-align: center;
   display: flex;
@@ -32,7 +32,7 @@
       &__block {
         max-width: 208px;
         &__title {
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           width: 100%;
         }
 
@@ -46,10 +46,11 @@
   }
 
   @include respond-to-extra-large {
-    padding: 24px 40px;
+    padding: 64px 40px;
   }
 
   @include respond-to-medium {
-    padding: 24px 16px;
+    padding: 48px 16px;
+    gap: 32px;
   }
 }

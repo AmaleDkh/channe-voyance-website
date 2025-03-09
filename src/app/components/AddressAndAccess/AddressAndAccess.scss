@@ -1,31 +1,29 @@
 @import "../../assets/style/mixins/breakpoints.scss";
 
 .address-and-access {
-  margin: 96px 104px;
+  margin: 64px 104px;
+  text-align: center;
 
   @include respond-to-extra-large {
     margin: 64px 40px;
   }
 
   @include respond-to-medium {
-    margin: 56px 16px;
+    margin: 48px 16px;
     text-align: center;
   }
 
   &__blocks {
     display: flex;
+    justify-content: center;
     gap: 160px;
 
     @include respond-to-medium {
       flex-direction: column;
-      gap: 40px;
+      gap: 32px;
     }
 
     &__item {
-      &__title {
-        margin-bottom: 24px;
-      }
-
       &__first-paragraph,
       &__second-paragraph {
         margin-bottom: 8px;

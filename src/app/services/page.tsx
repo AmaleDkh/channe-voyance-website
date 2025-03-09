@@ -1,23 +1,23 @@
 "use client";
 
 // Components
-import Layout from "../../components/Layout/Layout";
+import Layout from "../components/Layout/Layout";
 import PageIntroduction from "@/app/components/PageIntroduction/PageIntroduction";
 import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
 import LastSectionWithButton from "@/app/components/LastSectionWithButton/LastSectionWithButton";
 
 // Style
-import "../../assets/style/Global.scss";
+import "../assets/style/Global.scss";
 
 // Custom hooks
 import {
   useThreeblocksSectionData,
   useLastSectionsData,
-} from "../../../hooks/useData";
+} from "../../hooks/useData";
 
 function Services() {
   const { servicesContent } = useThreeblocksSectionData();
-  const { homepageLastContent } = useLastSectionsData();
+  const lastSectionsContentArray = useLastSectionsData();
 
   return (
     <Layout>
@@ -37,16 +37,16 @@ function Services() {
           paragraph3=""
           flexVersion=""
           withButton={true}
-          firstButtonLink="/pages/reading"
-          secondButtonLink="/pages/meditation"
-          thirdbButtonLink="/pages/energy-care"
+          firstButtonLink="/reading"
+          secondButtonLink="/meditation"
+          thirdbButtonLink="/energy-care"
         />
       )}
 
-      {homepageLastContent && (
+      {lastSectionsContentArray?.[0] && (
         <LastSectionWithButton
-          title={homepageLastContent.lastsection_title}
-          paragraph={homepageLastContent.lastsection_paragraph}
+          title={lastSectionsContentArray[0].lastsection_title}
+          paragraph={lastSectionsContentArray[0].lastsection_paragraph}
           lastSectionWithButtonWithMarginTop=""
         />
       )}

@@ -1,0 +1,38 @@
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
+@import "../../assets/style/Fonts.scss";
+
+.three-key-figures {
+  margin: 64px 104px;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to-extra-large {
+    margin: 64px 40px 0 40px;
+  }
+
+  @include respond-to-medium {
+    margin: 48px 16px 0 16px;
+  }
+
+  &__block {
+    text-align: center;
+    &__number {
+      color: $gold-color;
+      font-size: 72px;
+
+      @include respond-to-medium {
+        font-size: 40px;
+      }
+    }
+
+    &__text {
+      font-size: 24px;
+      margin-top: 16px;
+
+      @include respond-to-medium {
+        font-size: 16px;
+      }
+    }
+  }
+}

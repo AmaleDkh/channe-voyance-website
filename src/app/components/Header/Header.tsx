@@ -22,14 +22,19 @@ function Header() {
         /> */}
         <Link className="header__first-block__name-and-profession" href="/">
           <div className="header__first-block__name-and-profession__first-and-last-name">
-            Channe Len
+            Channe
           </div>
           <div className="header__first-block__name-and-profession__profession">
-            Voyante
+            Voyance
           </div>
         </Link>
         <div className="header__button">
-          <Button text="PRENDRE RENDEZ-VOUS" link="" buttonWithMarginAuto="" />
+          <Button
+            text="PRENDRE RENDEZ-VOUS"
+            link="https://www.planity.com/channe-massage-92210-saint-cloud"
+            buttonWithMarginAuto=""
+            buttonSecondVersion=""
+          />
         </div>
       </div>
 

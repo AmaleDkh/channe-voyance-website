@@ -6,7 +6,6 @@ import {
   fetchLargeImageContainerSections,
   fetchPageIntroductionSections,
   fetchThreeBlockSections,
-  // fetchFiveBlockSections,
   fetchTextAndImageSections,
   fetchBenefitsSections,
   fetchFaqSections,
@@ -49,25 +48,6 @@ type ThreeBlockSection = {
   bloc_3_paragraph: string;
 };
 
-// type FiveBlockSection = {
-//   section_introduction: string;
-//   bloc_1_image: string;
-//   bloc_1_title: string;
-//   bloc_1_paragraph: string;
-//   bloc_2_image: string;
-//   bloc_2_title: string;
-//   bloc_2_paragraph: string;
-//   bloc_3_image: string;
-//   bloc_3_title: string;
-//   bloc_3_paragraph: string;
-//   bloc_4_image: string;
-//   bloc_4_title: string;
-//   bloc_4_paragraph: string;
-//   bloc_5_image: string;
-//   bloc_5_title: string;
-//   bloc_5_paragraph: string;
-// };
-
 type BenefitsSection = {
   section_title: string;
   section_introduction: string;
@@ -80,65 +60,39 @@ type BenefitsSection = {
 };
 
 type FaqSection = {
-  faq_section_question1: string;
-  faq_section_answer1: string;
-  faq_section_question2: string;
-  faq_section_answer2: string;
-  faq_section_question3: string;
-  faq_section_answer3: string;
-  faq_section_question4: string;
-  faq_section_answer4: string;
-  faq_section_question5: string;
-  faq_section_answer5: string;
-  faq_section_question6: string;
-  faq_section_answer6: string;
-  faq_section_question7: string;
-  faq_section_answer7: string;
-  faq_section_question8: string;
-  faq_section_answer8: string;
-  faq_section_question9: string;
-  faq_section_answer9: string;
-  faq_section_question10: string;
-  faq_section_answer10: string;
-  faq_section_image: string;
+  question: string;
+  answer: string;
+  page: string;
 };
 
 type BoutiqueSection = {
-  store_first_item_name: string;
-  store_first_item_price: string;
-  store_first_item_image: string;
-  store_second_item_name: string;
-  store_second_item_price: string;
-  store_second_item_image: string;
-  store_third_item_name: string;
-  store_third_item_price: string;
-  store_third_item_image: string;
-  store_fourth_item_name: string;
-  store_fourth_item_price: string;
-  store_fourth_item_image: string;
-  store_fifth_item_name: string;
-  store_fifth_item_price: string;
-  store_fifth_item_image: string;
-  store_sixth_item_name: string;
-  store_sixth_item_price: string;
-  store_sixth_item_image: string;
+  product_image: string;
+  product_name: string;
+  product_price: string;
 };
 
 type CarePricesBlocks = {
-  care_information_title: string;
-  first_care_image: string;
-  first_care_communication: string;
-  first_care_duration: string;
-  first_care_price: string;
-  second_care_image: string;
-  second_care_communication: string;
-  second_care_duration: string;
-  second_care_price: string;
-  third_care_image: string;
-  third_care_communication: string;
-  third_care_duration: string;
-  third_care_price: string;
+  care: string;
+  care_communication: string;
+  care_duration: string;
+  care_price: string;
 };
+
+// type CarePricesBlocks = {
+//   care_information_title: string;
+//   first_care_image: string;
+//   first_care_communication: string;
+//   first_care_duration: string;
+//   first_care_price: string;
+//   second_care_image: string;
+//   second_care_communication: string;
+//   second_care_duration: string;
+//   second_care_price: string;
+//   third_care_image: string;
+//   third_care_communication: string;
+//   third_care_duration: string;
+//   third_care_price: string;
+// };
 
 type PracticalInformationSection = {
   practical_information_image: string;
@@ -150,12 +104,12 @@ type PracticalInformationSection = {
   localisation_third_access: string;
 };
 
-type lastSection = {
+type LastSection = {
   lastsection_title: string;
   lastsection_paragraph: string;
 };
 
-type reviewSection = {
+type ReviewSection = {
   client_name: string;
   client_review: string;
 };
@@ -398,57 +352,21 @@ export const useThreeblocksSectionData = () => {
   };
 };
 
-// export const useFiveblocksSectionData = () => {
-//   const [energyCareAdvantagesContent, setEnergyCareAdvantagesContent] =
-//     useState<FiveBlockSection | null>(null);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const fiveBlockSectionsList = await fetchFiveBlockSections();
-
-//         const energyCareAdvantagesContentData = fiveBlockSectionsList[0].acf;
-
-//         if (energyCareAdvantagesContentData) {
-//           setEnergyCareAdvantagesContent(energyCareAdvantagesContentData);
-//         }
-//       } catch (error) {
-//         console.error(
-//           "Une erreur est survenue lors de la récupération de la section",
-//           error
-//         );
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   return energyCareAdvantagesContent;
-// };
-
 export const useBenefitsSectionData = () => {
-  const [readingBenefitsContent, setReadingBenefitsContent] =
-    useState<BenefitsSection | null>(null);
-
-  const [meditationBenefitsContent, setMeditationBenefitsContent] =
-    useState<BenefitsSection | null>(null);
-
-  const [energyCareBenefitsContent, setEnergyCareBenefitsContent] =
-    useState<BenefitsSection | null>(null);
+  const [benefitsSectionsArray, setBenefitsSectionsArray] = useState<
+    BenefitsSection[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const benefitsSectionsList = await fetchBenefitsSections();
 
-        const readingBenefitsContentData = benefitsSectionsList[2].acf;
-        const meditationBenefitsContentData = benefitsSectionsList[1].acf;
-        const energyCareBenefitsContentData = benefitsSectionsList[0].acf;
+        const benefitsSections = benefitsSectionsList.map(
+          (benefitSection: { acf: BenefitsSection }) => benefitSection.acf
+        );
 
-        if (readingBenefitsContentData) {
-          setReadingBenefitsContent(readingBenefitsContentData);
-          setMeditationBenefitsContent(meditationBenefitsContentData);
-          setEnergyCareBenefitsContent(energyCareBenefitsContentData);
-        }
+        setBenefitsSectionsArray(benefitsSections);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -459,42 +377,24 @@ export const useBenefitsSectionData = () => {
     fetchData();
   }, []);
 
-  return {
-    readingBenefitsContent,
-    meditationBenefitsContent,
-    energyCareBenefitsContent,
-  };
+  return benefitsSectionsArray;
 };
 
 export const useFaqSectionData = () => {
-  const [readingFaqContent, setReadingFaqContent] = useState<FaqSection | null>(
-    null
-  );
-
-  const [meditationFaqContent, setMeditationFaqContent] =
-    useState<FaqSection | null>(null);
-
-  const [energyCareFaqContent, setEnergyCareFaqContent] =
-    useState<FaqSection | null>(null);
-
-  const [practicalInformationFaqContent, setPracticalInformationFaqContent] =
-    useState<FaqSection | null>(null);
+  const [faqSectionsContentArray, setFaqSectionsContentArray] = useState<
+    FaqSection[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const faqSectionsList = await fetchFaqSections();
-        const readingFaqContentData = faqSectionsList[3].acf;
-        const meditationFaqContentData = faqSectionsList[2].acf;
-        const energyCareFaqContentData = faqSectionsList[1].acf;
-        const practicalInformationFaqContentData = faqSectionsList[0].acf;
+        const faqQuestionsList = await fetchFaqSections();
 
-        if (faqSectionsList) {
-          setReadingFaqContent(readingFaqContentData);
-          setMeditationFaqContent(meditationFaqContentData);
-          setEnergyCareFaqContent(energyCareFaqContentData);
-          setPracticalInformationFaqContent(practicalInformationFaqContentData);
-        }
+        const faqQuestions = faqQuestionsList.map(
+          (faqQuestion: { acf: FaqSection }) => faqQuestion.acf
+        );
+
+        setFaqSectionsContentArray(faqQuestions);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -505,27 +405,24 @@ export const useFaqSectionData = () => {
     fetchData();
   }, []);
 
-  return {
-    readingFaqContent,
-    meditationFaqContent,
-    energyCareFaqContent,
-    practicalInformationFaqContent,
-  };
+  return faqSectionsContentArray;
 };
 
 export const useBoutiqueData = () => {
-  const [boutiqueItemsContent, setBoutiqueItemsContent] =
-    useState<BoutiqueSection | null>(null);
+  const [boutiqueItemsContentArray, setBoutiqueItemsContentArray] = useState<
+    BoutiqueSection[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const boutiqueItemsContentData = await fetchBoutiqueSection();
-        const boutiqueItemsContentSection = boutiqueItemsContentData[0].acf;
 
-        if (boutiqueItemsContentSection) {
-          setBoutiqueItemsContent(boutiqueItemsContentSection);
-        }
+        const productBlocks = boutiqueItemsContentData.map(
+          (productBlock: { acf: BoutiqueSection }) => productBlock.acf
+        );
+
+        setBoutiqueItemsContentArray(productBlocks);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -536,35 +433,25 @@ export const useBoutiqueData = () => {
     fetchData();
   }, []);
 
-  return {
-    boutiqueItemsContent,
-  };
+  return boutiqueItemsContentArray;
 };
 
 export const useCarePricesBlocksData = () => {
-  const [readingCarePricesContent, setReadingCarePricesContent] =
-    useState<CarePricesBlocks | null>(null);
-
-  const [meditationCarePricesContent, setMeditationCarePricesContent] =
-    useState<CarePricesBlocks | null>(null);
-
-  const [energyCarePricesContent, setEnergyCarePricesContent] =
-    useState<CarePricesBlocks | null>(null);
+  const [carePricesContentArray, setCarePricesontentArray] = useState<
+    CarePricesBlocks[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const carePricesBlockssList = await fetchCarePricesSections();
+        const carePricesBlocksList = await fetchCarePricesSections();
 
-        const meditationCarePricesData = carePricesBlockssList[2].acf;
-        const energyCarePricesData = carePricesBlockssList[1].acf;
-        const readingCarePricesData = carePricesBlockssList[0].acf;
+        const carePricesBlocksListSections = carePricesBlocksList.map(
+          (carePricesBlocksListSection: { acf: CarePricesBlocks }) =>
+            carePricesBlocksListSection.acf
+        );
 
-        if (carePricesBlockssList) {
-          setMeditationCarePricesContent(meditationCarePricesData);
-          setEnergyCarePricesContent(energyCarePricesData);
-          setReadingCarePricesContent(readingCarePricesData);
-        }
+        setCarePricesontentArray(carePricesBlocksListSections);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -575,28 +462,27 @@ export const useCarePricesBlocksData = () => {
     fetchData();
   }, []);
 
-  return {
-    readingCarePricesContent,
-    meditationCarePricesContent,
-    energyCarePricesContent,
-  };
+  return carePricesContentArray;
 };
 
 export const usePracticalInformationData = () => {
-  const [practicalInformationContent, setPracticalInformationContent] =
-    useState<PracticalInformationSection | null>(null);
+  const [
+    practicalInformationContentArray,
+    setPracticalInformationContentArray,
+  ] = useState<PracticalInformationSection[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const practicalInformationContentData =
           await fetchPracticalInformationSection();
-        const practicalInformationContentSection =
-          practicalInformationContentData[0].acf;
 
-        if (practicalInformationContentData) {
-          setPracticalInformationContent(practicalInformationContentSection);
-        }
+        const practicalInformationArray = practicalInformationContentData.map(
+          (practicalInformation: { acf: PracticalInformationSection }) =>
+            practicalInformation.acf
+        );
+
+        setPracticalInformationContentArray(practicalInformationArray);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -607,49 +493,24 @@ export const usePracticalInformationData = () => {
     fetchData();
   }, []);
 
-  return {
-    practicalInformationContent,
-  };
+  return practicalInformationContentArray;
 };
 
 export const useReviewsData = () => {
-  const [firstReviewContent, setFirstReviewContent] =
-    useState<reviewSection | null>(null);
-
-  const [secondReviewContent, setSecondReviewContent] =
-    useState<reviewSection | null>(null);
-
-  const [thirdReviewContent, setThirdReviewContent] =
-    useState<reviewSection | null>(null);
-
-  const [fourthReviewContent, setFourthReviewContent] =
-    useState<reviewSection | null>(null);
-
-  const [fifthReviewContent, setFifthReviewContent] =
-    useState<reviewSection | null>(null);
-
-  const [sixthReviewContent, setSixthReviewContent] =
-    useState<reviewSection | null>(null);
+  const [reviewsContentArray, setReviewsContentArray] = useState<
+    ReviewSection[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const reviewsContentData = await fetchReviewsSection();
-        const firstReviewContentSection = reviewsContentData[5].acf;
-        const secondReviewContentSection = reviewsContentData[4].acf;
-        const thirdReviewContentSection = reviewsContentData[3].acf;
-        const fourthReviewContentSection = reviewsContentData[2].acf;
-        const fifthReviewContentSection = reviewsContentData[1].acf;
-        const sixthReviewContentSection = reviewsContentData[0].acf;
 
-        if (reviewsContentData) {
-          setFirstReviewContent(firstReviewContentSection);
-          setSecondReviewContent(secondReviewContentSection);
-          setThirdReviewContent(thirdReviewContentSection);
-          setFourthReviewContent(fourthReviewContentSection);
-          setFifthReviewContent(fifthReviewContentSection);
-          setSixthReviewContent(sixthReviewContentSection);
-        }
+        const reviewsArray = reviewsContentData.map(
+          (review: { acf: ReviewSection }) => review.acf
+        );
+
+        setReviewsContentArray(reviewsArray);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -660,55 +521,24 @@ export const useReviewsData = () => {
     fetchData();
   }, []);
 
-  return {
-    firstReviewContent,
-    secondReviewContent,
-    thirdReviewContent,
-    fourthReviewContent,
-    fifthReviewContent,
-    sixthReviewContent,
-  };
+  return reviewsContentArray;
 };
 
 export const useLastSectionsData = () => {
-  const [homepageLastContent, setHomepageLastContent] =
-    useState<lastSection | null>(null);
-
-  const [aboutLastContent, setAboutLastContent] = useState<lastSection | null>(
-    null
-  );
-
-  const [readingLastContent, setReadingLastContent] =
-    useState<lastSection | null>(null);
-
-  const [meditationLastContent, setMeditationLastContent] =
-    useState<lastSection | null>(null);
-
-  const [energyCareLastContent, setEnergyCareLastContent] =
-    useState<lastSection | null>(null);
-
-  const [reviewsLastContent, setReviewsLastContent] =
-    useState<lastSection | null>(null);
+  const [lastSectionsContentArray, setLastSectionsContentArray] = useState<
+    LastSection[]
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const lastSectionsList = await fetchLastSections();
-        const homePageLastSection = lastSectionsList[5].acf;
-        const aboutPageLastSection = lastSectionsList[4].acf;
-        const readingPageLastSection = lastSectionsList[3].acf;
-        const meditationPageLastSection = lastSectionsList[2].acf;
-        const energyCarePageLastSection = lastSectionsList[1].acf;
-        const reviewsPageLastSection = lastSectionsList[0].acf;
 
-        if (homePageLastSection) {
-          setHomepageLastContent(homePageLastSection);
-          setAboutLastContent(aboutPageLastSection);
-          setReadingLastContent(readingPageLastSection);
-          setMeditationLastContent(meditationPageLastSection);
-          setEnergyCareLastContent(energyCarePageLastSection);
-          setReviewsLastContent(reviewsPageLastSection);
-        }
+        const lastSections = lastSectionsList.map(
+          (lastSection: { acf: LastSection }) => lastSection.acf
+        );
+
+        setLastSectionsContentArray(lastSections);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -719,12 +549,5 @@ export const useLastSectionsData = () => {
     fetchData();
   }, []);
 
-  return {
-    homepageLastContent,
-    aboutLastContent,
-    readingLastContent,
-    meditationLastContent,
-    energyCareLastContent,
-    reviewsLastContent,
-  };
+  return lastSectionsContentArray;
 };

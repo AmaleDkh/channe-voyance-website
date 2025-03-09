@@ -8,14 +8,14 @@ import Reviews from "@/app/components/Reviews/Reviews";
 import ThreeBlocksSection from "@/app/components/ThreeBlocksSection/ThreeBlocksSection";
 
 // Style
-import "../../assets/style/Global.scss";
+import "../assets/style/Global.scss";
 import "./store.scss";
 
 // Custom hooks
 import {
   usePageIntroductionSectionsData,
   useThreeblocksSectionData,
-} from "../../../hooks/useData";
+} from "../../hooks/useData";
 
 function Store() {
   const { storeIntroduction } = usePageIntroductionSectionsData();
@@ -34,26 +34,24 @@ function Store() {
 
       <Reviews />
 
-      <h2 className="store-page__title">Les services proposés</h2>
-
       {servicesContent && (
         <ThreeBlocksSection
-          sectionTitle=""
-          sectionIntroduction=""
+          sectionTitle={servicesContent.section_title}
+          sectionIntroduction={servicesContent.section_introduction}
           image1={servicesContent.bloc_1_image}
           title1={servicesContent.bloc_1_titre}
-          paragraph1=""
+          paragraph1={servicesContent.bloc_1_paragraph}
           image2={servicesContent.bloc_2_image}
           title2={servicesContent.bloc_2_titre}
-          paragraph2=""
+          paragraph2={servicesContent.bloc_2_paragraph}
           image3={servicesContent.bloc_3_image}
           title3={servicesContent.bloc_3_titre}
-          paragraph3=""
+          paragraph3={servicesContent.bloc_3_paragraph}
           flexVersion=""
           withButton={true}
-          firstButtonLink="/pages/reading"
-          secondButtonLink="/pages/meditation"
-          thirdbButtonLink="/pages/energy-care"
+          firstButtonLink="/reading"
+          secondButtonLink="/meditation"
+          thirdbButtonLink="/energy-care"
         />
       )}
     </Layout>

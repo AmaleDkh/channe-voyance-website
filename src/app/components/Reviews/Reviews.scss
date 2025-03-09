@@ -1,21 +1,23 @@
 @import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Fonts.scss";
 @import "../../assets/style/Colors.scss";
 
 .reviews-section {
   background-color: $green-color;
   color: white;
-  padding: 96px 104px;
+  padding: 64px 104px;
   text-align: center;
-  margin-bottom: 96px;
+
+  @include respond-to-medium {
+    position: relative;
+  }
 
   @include respond-to-extra-large {
     padding: 64px 40px;
-    margin-bottom: 64px;
   }
 
   @include respond-to-medium {
     padding: 40px 16px;
-    margin-bottom: 56px;
   }
 
   &__title {
@@ -23,9 +25,58 @@
   }
 
   &__content {
+    @include respond-to-medium {
+      margin: 0 24px;
+    }
+
     &__name {
-      margin: 0 0 24px 0;
       color: white;
     }
   }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    gap: 80px;
+  }
+
+  &--desktop-version {
+    @include respond-to-medium {
+      display: none;
+    }
+  }
+
+  &--mobile-version {
+    display: none;
+
+    @include respond-to-medium {
+      display: block;
+      // margin: 0;
+      padding: 0 16px;
+    }
+  }
+}
+
+.arrow-left,
+.arrow-right {
+  color: white;
+  margin: 0;
+}
+
+.reviews-section__icon-right {
+  position: absolute;
+  right: 0;
+
+  color: white;
+  z-index: 1;
+  top: 50%;
+}
+
+.reviews-section__icon-left {
+  position: absolute;
+  left: 0;
+  color: white;
+  z-index: 1;
+  top: 50%;
 }

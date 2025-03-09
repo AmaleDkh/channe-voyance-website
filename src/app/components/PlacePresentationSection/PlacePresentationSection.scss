@@ -4,8 +4,8 @@
 
 .place-presentation-section {
   background-color: $beige-color;
-  padding: 96px 104px;
-  margin-bottom: 96px;
+  padding: 64px 104px;
+  margin-bottom: 64px;
 
   @include respond-to-extra-large {
     padding: 64px 40px;
@@ -14,7 +14,7 @@
 
   @include respond-to-medium {
     padding: 40px 16px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 
   &__texts {
@@ -22,17 +22,20 @@
 
     &__paragraph {
       margin-bottom: 56px;
+
+      @include respond-to-medium {
+        margin-bottom: 24px;
+      }
     }
   }
 
   &__images-block {
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 32px;
 
     @include respond-to-medium {
       flex-direction: column;
-      gap: 40px;
     }
 
     &__image {

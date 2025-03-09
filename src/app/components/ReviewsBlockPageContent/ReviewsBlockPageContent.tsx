@@ -19,9 +19,6 @@ function ReviewsBlockPageContent({
         <div className="reviews-page-section__block__content__review">
           {paragraph}
         </div>
-        {/* <h3 className="reviews-page-section__block__content__name">
-          Lorem ipsum
-        </h3> */}
       </div>
     </div>
   );

@@ -23,7 +23,12 @@ function LastSectionWithButton({
         <h2 className="last-section-with-button__text__title">{title}</h2>
         <p className="last-section-with-button__text__subtitle">{paragraph}</p>
       </div>
-      <Button text="PRENDRE RENDEZ-VOUS" link="" buttonWithMarginAuto="" />
+      <Button
+        text="PRENDRE RENDEZ-VOUS"
+        link="https://www.planity.com/channe-massage-92210-saint-cloud"
+        buttonWithMarginAuto=""
+        buttonSecondVersion=""
+      />
     </section>
   );
 }

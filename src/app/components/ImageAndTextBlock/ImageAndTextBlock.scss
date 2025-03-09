@@ -9,6 +9,10 @@
   gap: 40px;
   flex: 1;
 
+  @include respond-to-medium {
+    gap: 16px;
+  }
+
   &__image-container {
     overflow: hidden;
     display: flex;
@@ -34,12 +38,16 @@
   }
 
   &__text {
-    &__title {
-      margin: 0 0 24px;
-    }
-
     &__paragraph {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
+
+      @include respond-to-extra-large {
+        margin: 0 0 16px 0;
+      }
+
+      @include respond-to-medium {
+        margin: 0;
+      }
     }
 
     &__button-container {

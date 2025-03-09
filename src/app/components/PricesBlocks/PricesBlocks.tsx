@@ -1,67 +1,58 @@
+// Next element
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 // Component
 import PriceItem from "../PriceItem/PriceItem";
 
 // Style
 import "./PricesBlocks.scss";
 
-interface PricesBlocksProps {
-  firstImage: string;
-  firstTitle: string;
-  firstDuration: string;
-  firstPrice: string;
-  secondImage: string;
-  secondTitle: string;
-  secondDuration: string;
-  secondPrice: string;
-  thirdImage: string;
-  thirdTitle: string;
-  thirdDuration: string;
-  thirdPrice: string;
+// Custom hooks
+import { useCarePricesBlocksData } from "../../../hooks/useData";
+
+interface ReadingPricesBlocks {
+  pricesPageVersion: string;
+  title: string;
+  page: string;
 }
 
-function PricesBlocks({
-  firstImage,
-  firstTitle,
-  firstDuration,
-  firstPrice,
-  secondImage,
-  secondTitle,
-  secondDuration,
-  secondPrice,
-  thirdImage,
-  thirdTitle,
-  thirdDuration,
-  thirdPrice,
-}: PricesBlocksProps) {
+function ReadingPricesBlocks({
+  title,
+  page,
+  pricesPageVersion,
+}: ReadingPricesBlocks) {
+  const pathname = usePathname();
+  const carePricesContentArray = useCarePricesBlocksData();
+  const carePricesFiltered = carePricesContentArray.filter(
+    (carePrices) => carePrices.care === page
+  );
+
   return (
-    <section className="price-items">
-      <div className="price-items__list">
-        <PriceItem
-          // image={firstImage}
-          image=""
-          title={firstTitle}
-          duration={firstDuration}
-          price={firstPrice}
-        />
-
-        <PriceItem
-          // image={secondImage}
-          image=""
-          title={secondTitle}
-          duration={secondDuration}
-          price={secondPrice}
-        />
-
-        <PriceItem
-          // image={thirdImage}
-          image=""
-          title={thirdTitle}
-          duration={thirdDuration}
-          price={thirdPrice}
-        />
+    <section className={`reading-price ${pricesPageVersion}`}>
+      <h2>{title}</h2>
+      <div className="reading-price__blocks">
+        {carePricesFiltered.map((carePrice, index) => (
+          <div key={index}>
+            <PriceItem
+              image=""
+              title={carePrice.care_communication}
+              duration={carePrice.care_duration}
+              price={carePrice.care_price}
+            />
+          </div>
+        ))}
       </div>
+
+      {page === "Voyance" && (
+        <p className="reading-price__paragraph">
+          Suite à notre consultation, vous pourrez me recontacter si vous
+          souhaitez obtenir des conseils supplémentaires. Je vous informerai du
+          tarif en fonction de la durée de nos échanges.
+        </p>
+      )}
     </section>
   );
 }
 
-export default PricesBlocks;
+export default ReadingPricesBlocks;

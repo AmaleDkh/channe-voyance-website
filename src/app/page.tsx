@@ -4,6 +4,7 @@
 import Layout from "./components/Layout/Layout";
 import LargeImageContainer from "./components/LargeImageContainer/LargeImageContainer";
 import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
+import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
 import ThreeBlocksSection from "./components/ThreeBlocksSection/ThreeBlocksSection";
 import SectionWithBackgroundColor from "./components/SectionWithBackgroundColor/SectionWithBackgroundColor";
 import Reviews from "./components/Reviews/Reviews";
@@ -26,7 +27,7 @@ export default function Home() {
   const { presentationContent } = useTextAndImageSectionData();
   const { advantagesContent, servicesContent } = useThreeblocksSectionData();
   const { PlacePresentation } = useTextAndImageSectionData();
-  const { homepageLastContent } = useLastSectionsData();
+  const lastSectionsContentArray = useLastSectionsData();
 
   return (
     <Layout>
@@ -50,6 +51,8 @@ export default function Home() {
         />
       )}
 
+      <ThreeKeyFigures />
+
       {advantagesContent && (
         <ThreeBlocksSection
           sectionTitle={advantagesContent.section_title}
@@ -59,7 +62,7 @@ export default function Home() {
           paragraph1={advantagesContent.bloc_1_paragraph}
           image2={advantagesContent.bloc_2_image}
           title2={advantagesContent.bloc_2_titre}
-          paragraph2={advantagesContent.bloc_3_paragraph}
+          paragraph2={advantagesContent.bloc_2_paragraph}
           image3={advantagesContent.bloc_3_image}
           title3={advantagesContent.bloc_3_titre}
           paragraph3={advantagesContent.bloc_3_paragraph}
@@ -88,9 +91,9 @@ export default function Home() {
           paragraph3={servicesContent.bloc_3_paragraph}
           flexVersion=""
           withButton={true}
-          firstButtonLink="/pages/reading"
-          secondButtonLink="/pages/meditation"
-          thirdbButtonLink="/pages/energy-care"
+          firstButtonLink="/reading"
+          secondButtonLink="/meditation"
+          thirdbButtonLink="/energy-care"
         />
       )}
 
@@ -105,10 +108,10 @@ export default function Home() {
         />
       )}
 
-      {homepageLastContent && (
+      {lastSectionsContentArray?.[5] && (
         <LastSectionWithButton
-          title={homepageLastContent.lastsection_title}
-          paragraph={homepageLastContent.lastsection_paragraph}
+          title={lastSectionsContentArray[5].lastsection_title}
+          paragraph={lastSectionsContentArray[5].lastsection_paragraph}
           lastSectionWithButtonWithMarginTop=""
         />
       )}

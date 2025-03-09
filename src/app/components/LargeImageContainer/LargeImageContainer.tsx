@@ -27,7 +27,7 @@ function LargeImageContainer({
         width={800}
         height={700}
       />
-      <p className="large-image-container__content">
+      <div className="large-image-container__content">
         <h1 className="large-image-container__content__title">{title}</h1>
         <p className="large-image-container__content__paragraph">
           {introduction}
@@ -36,8 +36,9 @@ function LargeImageContainer({
           text="Commencez dès aujourd'hui votre chemin vers l'équilibre"
           link=""
           buttonWithMarginAuto=""
+          buttonSecondVersion=""
         />
-      </p>
+      </div>
     </div>
   );
 }

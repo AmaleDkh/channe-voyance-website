@@ -3,19 +3,22 @@
 @import "../../assets/style/Fonts.scss";
 
 .frequently-asked-questions-section {
-  margin: 96px 0 0 0;
+  margin: 64px 0 0 0;
   width: 100%;
 
   @include respond-to-extra-large {
     margin: 64px 0 0 0;
   }
 
+  @include respond-to-medium {
+    margin: 48px 0 0 0;
+  }
+
   &__questions-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 104px;
-    padding: 96px 104px;
+    padding: 64px 104px;
     background-color: $green-color;
     color: white;
 
@@ -29,17 +32,29 @@
 
     &__title {
       color: white;
+
+      @include respond-to-medium {
+        display: none;
+      }
+    }
+
+    &__title--mobile-version {
+      color: white;
+      display: none;
+
+      @include respond-to-medium {
+        display: block;
+      }
     }
 
     &__questions {
       display: flex;
       flex-direction: column;
       gap: 40px;
-      width: 800px;
+      width: 748px;
 
       @include respond-to-medium {
         width: 100%;
-        text-align: center;
       }
     }
   }

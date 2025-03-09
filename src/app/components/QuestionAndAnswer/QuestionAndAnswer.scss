@@ -7,8 +7,21 @@
   cursor: pointer;
   max-width: 800px;
 
+  &__question-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__dash {
+      width: 8px;
+      height: 2px;
+      background-color: white;
+    }
+  }
+
   &__question {
     font-weight: 500;
+    width: fit-content;
   }
 
   &__answer {

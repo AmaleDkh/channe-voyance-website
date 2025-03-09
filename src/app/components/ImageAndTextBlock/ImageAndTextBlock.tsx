@@ -38,12 +38,15 @@ function ImageAndTextBlock({
 
       <div className="image-and-text-block__text">
         <h3 className="image-and-text-block__text__title">{title}</h3>
-        <p className="image-and-text-block__text__paragraph">{paragraph}</p>
+        {paragraph ? (
+          <p className="image-and-text-block__text__paragraph">{paragraph}</p>
+        ) : null}
         {withButton && (
           <Button
             text="Découvrir"
             link={buttonLink}
             buttonWithMarginAuto="button-with-margin-auto"
+            buttonSecondVersion="button-second-version"
           />
         )}
       </div>

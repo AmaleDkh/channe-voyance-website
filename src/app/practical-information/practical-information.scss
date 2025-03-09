@@ -1,24 +1,22 @@
-@import "../../assets/style/mixins/breakpoints.scss";
+@import "../assets/style/mixins/breakpoints.scss";
 
 .practical-information {
   &__prices {
-    margin: 96px 104px;
+    margin: 64px 104px;
     text-align: center;
 
     @include respond-to-extra-large {
       margin: 64px 40px;
     }
 
+    @include respond-to-medium {
+      margin: 48px 16px;
+    }
+
     &__blocks {
       display: flex;
       flex-direction: column;
       gap: 40px;
-
-      &__block {
-        &__title {
-          margin-bottom: 24px;
-        }
-      }
     }
   }
 }

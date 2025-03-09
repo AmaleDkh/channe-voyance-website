@@ -22,3 +22,13 @@
     margin-bottom: 40px;
   }
 }
+
+.button-second-version {
+  border: 2px solid $dark-gold-color;
+  background-color: white;
+  color: $dark-gold-color;
+
+  @include respond-to-medium {
+    margin: 16px auto 0 auto;
+  }
+}

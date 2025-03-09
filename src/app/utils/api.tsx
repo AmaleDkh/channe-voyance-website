@@ -85,23 +85,6 @@ export const fetchThreeBlockSections = async () => {
   }
 };
 
-// Get all five block sections
-// export const fetchFiveBlockSections = async () => {
-//   try {
-//     const response = await fetch(`${apiUrl}/five_blocks_section`);
-
-//     if (!response.ok) {
-//       throw new Error("Erreur lors de la requête GET des sections");
-//     }
-
-//     const sections = await response.json();
-//     return sections;
-//   } catch (error) {
-//     console.error("Erreur lors de la récupération des sections", error);
-//     throw error;
-//   }
-// };
-
 // Get all benefits sections
 export const fetchBenefitsSections = async () => {
   try {
@@ -122,7 +105,7 @@ export const fetchBenefitsSections = async () => {
 // Get all faq sections
 export const fetchFaqSections = async () => {
   try {
-    const response = await fetch(`${apiUrl}/faq_section`);
+    const response = await fetch(`${apiUrl}/faq_section?per_page=100`);
 
     if (!response.ok) {
       throw new Error("Erreur lors de la requête GET des sections");

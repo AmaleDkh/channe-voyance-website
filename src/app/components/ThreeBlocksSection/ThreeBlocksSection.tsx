@@ -50,7 +50,9 @@ function ThreeBlocksSection({
     <section className="three-blocks-section">
       <h2 className="three-blocks-section__title">{sectionTitle}</h2>
 
-      <p className="three-blocks-section__paragraph">{sectionIntroduction}</p>
+      {sectionIntroduction ? (
+        <p className="three-blocks-section__paragraph">{sectionIntroduction}</p>
+      ) : null}
 
       <div
         className={`three-blocks-section__three-blocks-container ${flexVersion}`}
@@ -60,7 +62,7 @@ function ThreeBlocksSection({
           title={title1}
           paragraph={paragraph1}
           flexVersion={
-            pathname === "/pages/reading" || pathname === "/pages/meditation"
+            pathname === "/reading" || pathname === "/meditation"
               ? "row-version"
               : ""
           }
@@ -73,7 +75,7 @@ function ThreeBlocksSection({
           title={title2}
           paragraph={paragraph2}
           flexVersion={
-            pathname === "/pages/reading" || pathname === "/pages/meditation"
+            pathname === "/reading" || pathname === "/meditation"
               ? "row-version"
               : ""
           }
@@ -86,7 +88,7 @@ function ThreeBlocksSection({
           title={title3}
           paragraph={paragraph3}
           flexVersion={
-            pathname === "/pages/reading" || pathname === "/pages/meditation"
+            pathname === "/reading" || pathname === "/meditation"
               ? "row-version"
               : ""
           }
